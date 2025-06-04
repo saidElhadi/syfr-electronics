@@ -1,0 +1,156 @@
+"use client";
+
+import Link from "next/link";
+import { useState, useEffect } from "react";
+
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+  return (
+    <nav className={`${
+      isScrolled 
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md' 
+        : 'bg-white dark:bg-gray-900'
+    } border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 transition-all duration-300 ease-in-out`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`flex justify-between items-center transition-all duration-300 ease-in-out ${
+          isScrolled ? 'h-12' : 'h-16'
+        }`}>          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className={`font-bold text-gray-900 dark:text-white transition-all duration-300 ${
+              isScrolled ? 'text-lg' : 'text-xl'
+            }`}>
+              SyFr Electronics
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              <Link
+                href="/"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                href="/products"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Products
+              </Link>              <Link
+                href="/about-us"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/blog"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              {/* Hamburger icon */}
+              <div className="w-6 h-6 relative">
+                <span
+                  className={`left-0 absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? "rotate-45 translate-y-2.5" : "translate-y-1"
+                  }`}
+                />
+                <span
+                  className={`left-0 absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out translate-y-2.5 ${
+                    isMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`left-0 absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? "-rotate-45 translate-y-2.5" : "translate-y-4"
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="px-2 pt-2 pb-3 mb-3 space-y-1 sm:px-3 bg-gray-50 dark:bg-gray-800 rounded-lg mt-2">
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href="/products"
+              onClick={closeMenu}
+              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              Products
+            </Link>            <Link
+              href="/about-us"
+              onClick={closeMenu}
+              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/blog"
+              onClick={closeMenu}
+              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
