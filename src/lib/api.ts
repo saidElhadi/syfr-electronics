@@ -66,6 +66,7 @@ export interface Part {
   part_type?: string;
   status?: string;
   manufacturer?: string;
+  part_number?: string;
 }
 
 // API base URL - using local API routes to proxy CMS requests
@@ -101,6 +102,9 @@ export async function getProducts(params: Record<string, any> = {}): Promise<Pro
 }
 export async function getProduct(id: string): Promise<Product> {
   return apiFetch<Product>(`/products/${id}`);
+}
+export async function getFeaturedProducts(): Promise<Product[]> {
+  return apiFetch<Product[]>('/products?featured=true');
 }
 
 // Product Categories API

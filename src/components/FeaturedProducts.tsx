@@ -9,61 +9,14 @@ export default function FeaturedProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
   useEffect(() => {
     async function loadProducts() {
       try {
-        const featuredProducts = await getFeaturedProducts(6);
-        setProducts(featuredProducts);
-      } catch (err) {
+        const featuredProducts = await getFeaturedProducts();
+        setProducts(featuredProducts);      } catch (err) {
         setError('Failed to load featured products');
         console.error('Error loading featured products:', err);
-        
-        // Fallback to mock data if API fails
-        setProducts([
-          {
-            id: '1',
-            name: 'P3.91 Outdoor LED Display',
-            description: 'High-brightness outdoor LED display perfect for stadiums and large venues',
-            category: 'outdoor-led',
-            price: 2499,
-            images: ['/products/outdoor-led-p3.jpg'],
-            specifications: { pixelPitch: '3.91mm', brightness: '5000 nits' },
-            inStock: true,
-            featured: true,
-            tags: ['outdoor', 'stadium', 'high-brightness'],
-            createdAt: '2024-01-01',
-            updatedAt: '2024-06-01'
-          },
-          {
-            id: '2', 
-            name: 'P1.25 Indoor LED Screen',
-            description: 'Ultra-fine pixel pitch indoor display for premium retail environments',
-            category: 'indoor-led',
-            price: 1899,
-            images: ['/products/indoor-led-p1.jpg'],
-            specifications: { pixelPitch: '1.25mm', resolution: '4K' },
-            inStock: true,
-            featured: true,
-            tags: ['indoor', 'retail', 'ultra-fine'],
-            createdAt: '2024-01-01',
-            updatedAt: '2024-06-01'
-          },
-          {
-            id: '3',
-            name: 'Flexible Curved LED Panel',
-            description: 'Innovative curved LED display for creative installations',
-            category: 'curved-led',
-            price: 3299,
-            images: ['/products/curved-led.jpg'],
-            specifications: { bendRadius: '1000mm', pixelPitch: '2.5mm' },
-            inStock: true,
-            featured: true,
-            tags: ['curved', 'flexible', 'creative'],
-            createdAt: '2024-01-01',
-            updatedAt: '2024-06-01'
-          }
-        ]);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
@@ -90,14 +43,29 @@ export default function FeaturedProducts() {
       </section>
     );
   }
-
   if (error && products.length === 0) {
     return (
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600 dark:text-gray-300">
-            Unable to load featured products at this time.
-          </p>
+          <div className="max-w-md mx-auto">
+            <div className="mb-6">
+              <svg className="w-16 h-16 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 18.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">
+              Unable to Load Featured Products
+            </h3>
+            <p className="text-red-500 dark:text-red-400 mb-6">
+              Failed to load featured products at this time. Please try again later.
+            </p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
         </div>
       </section>
     );
