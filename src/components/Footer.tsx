@@ -1,15 +1,21 @@
-import Link from "next/link";
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const tNav = useTranslations('navigation');
+  
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">SyFr Electronics</h3>
+            <h3 className="text-xl font-bold mb-4">{t('company')}</h3>
             <p className="text-gray-300 mb-4">
-              Your trusted source for quality electronics and components since 2020.
+              {t('description')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
@@ -28,34 +34,37 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
+          </div>          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                  Home
+                  {tNav('home')}
                 </Link>
               </li>
               <li>
                 <Link href="/products" className="text-gray-300 hover:text-white transition-colors">
-                  Products
-                </Link>
-              </li>              <li>
-                <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors">
-                  About Us
+                  {tNav('products')}
                 </Link>
               </li>
               <li>
+                <Link href="/parts" className="text-gray-300 hover:text-white transition-colors">
+                  {tNav('parts')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors">
+                  {tNav('about')}
+                </Link>
+              </li>              <li>
                 <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
-                  Blog
+                  {tNav('blog')}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact
+                  {tNav('contact')}
                 </Link>
               </li>
             </ul>
@@ -101,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2025 SyFr Electronics. All rights reserved.</p>
+          <p>&copy; 2025 {t('company')}. {t('allRightsReserved')}</p>
         </div>
       </div>
     </footer>

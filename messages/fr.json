@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "title": "Solutions d'Affichage LED Professionnelles | Écrans LED Extérieurs, Intérieurs et Courbés | SyFr Electronics",
+    "description": "Solutions d'affichage LED premium incluant écrans LED extérieurs, écrans LED intérieurs et écrans LED courbés. Pièces LED complètes, installation et support 24/7. Plus de 15 ans d'expérience, plus de 10 000 installations dans le monde.",
+    "keywords": "écrans LED, affichage LED extérieur, écrans LED intérieurs, écrans LED courbés, pièces d'affichage LED, modules LED, installation écran LED, location écran LED, signalisation numérique, panneau LED, écrans LED stade, écrans LED commerce, systèmes contrôle LED, alimentations LED, écrans LED professionnels"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "products": "Produits",
+    "parts": "Pièces",
+    "about": "À Propos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Solutions d'Affichage LED Professionnelles",
+      "subtitle": "Écrans LED premium extérieurs, intérieurs et courbés avec pièces complètes et services d'installation",
+      "cta": "Explorer les Solutions"
+    },
+    "features": {
+      "outdoor": "Écrans LED Extérieurs",
+      "indoor": "Écrans LED Intérieurs",
+      "curved": "Écrans LED Courbés",
+      "parts": "Composants et Pièces LED"
+    }
+  },
+  "common": {
+    "learnMore": "En Savoir Plus",
+    "getQuote": "Obtenir un Devis",
+    "viewAll": "Voir Tout",
+    "searchPlaceholder": "Rechercher des produits..."
+  },
+  "footer": {
+    "company": "SyFr Electronics",
+    "description": "Fournisseur de solutions d'affichage LED professionnel avec plus de 15 ans d'expérience",
+    "allRightsReserved": "Tous droits réservés"
+  }
+}
