@@ -11,18 +11,138 @@
     "about": "About Us",
     "blog": "Blog",
     "contact": "Contact"
-  },
-  "homepage": {
+  },  "homepage": {
     "hero": {
+      "trustIndicators": {
+        "experience": "15+ Years Experience",
+        "installations": "10,000+ Installations", 
+        "support": "24/7 Support"
+      },
       "title": "Professional LED Display Solutions",
-      "subtitle": "Premium outdoor, indoor & curved LED displays with complete parts and installation services",
-      "cta": "Explore Solutions"
+      "subtitle": "Premium Outdoor LED Displays, Indoor LED Screens, and Curved LED Displays with Complete Parts & Installation Services",
+      "valueProposition": "From small retail displays to massive stadium screens. Get industry-leading LED display technology with guaranteed performance and lifetime support.",
+      "ctaPrimary": "View LED Displays",
+      "ctaSecondary": "Get Free Quote",
+      "socialProof": {
+        "projects": "Projects Completed",
+        "uptime": "Uptime Guarantee", 
+        "response": "Support Response"
+      }
     },
-    "features": {
-      "outdoor": "Outdoor LED Displays",
-      "indoor": "Indoor LED Screens", 
-      "curved": "Curved LED Displays",
-      "parts": "LED Components & Parts"
+    "categories": {
+      "title": "LED Display Solutions for Every Need",
+      "subtitle": "From outdoor billboards to indoor retail displays, we provide cutting-edge LED technology for all applications",
+      "outdoor": {
+        "title": "Outdoor LED Displays",
+        "description": "Weather-resistant displays perfect for billboards, stadiums, and outdoor advertising. IP65 rated with high brightness up to 10,000 nits.",
+        "features": {
+          "waterproof": "IP65 Waterproof Rating",
+          "brightness": "High Brightness (up to 10,000 nits)",
+          "resistant": "Anti-UV & Corrosion Resistant"
+        },
+        "cta": "View Outdoor Displays"
+      },
+      "indoor": {
+        "title": "Indoor LED Displays", 
+        "description": "High-resolution indoor screens for retail, corporate, and entertainment venues. Ultra-fine pixel pitch for crystal-clear images.",
+        "features": {
+          "pixelPitch": "Ultra-Fine Pixel Pitch (P0.9-P10)",
+          "resolution": "4K/8K Resolution Support",
+          "efficient": "Energy Efficient Design"
+        },
+        "cta": "View Indoor Displays"
+      },
+      "curved": {
+        "title": "Curved LED Displays",
+        "description": "Innovative curved and flexible LED displays for unique installations. Perfect for creative architectural integration and immersive experiences.",
+        "features": {
+          "flexible": "Flexible Curved Design",
+          "viewing": "360° Viewing Angles", 
+          "custom": "Custom Shapes Available"
+        },
+        "cta": "View Curved Displays"
+      }
+    },
+    "parts": {
+      "title": "Complete LED Display Parts & Components",
+      "subtitle": "Everything you need for LED display installation, maintenance, and upgrades - from individual modules to complete control systems",
+      "components": {
+        "modules": {
+          "title": "LED Modules",
+          "description": "High-quality LED modules in various pixel pitches"
+        },
+        "control": {
+          "title": "Control Systems",
+          "description": "Advanced controllers and video processors"
+        },
+        "power": {
+          "title": "Power Supplies", 
+          "description": "Reliable LED display power solutions"
+        },
+        "mounting": {
+          "title": "Mounting Hardware",
+          "description": "Professional mounting and rigging solutions"
+        }
+      },
+      "cta": "View All LED Parts"
+    },
+    "industries": {
+      "title": "Trusted by Leading Industries",
+      "subtitle": "Our LED display solutions power success across diverse sectors worldwide",
+      "sectors": {
+        "retail": "Retail & Shopping",
+        "sports": "Sports & Stadiums", 
+        "transportation": "Transportation",
+        "corporate": "Corporate & Events",
+        "entertainment": "Entertainment",
+        "education": "Education"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose SyFr Electronics?",
+      "subtitle": "Industry-leading expertise backed by proven results",
+      "reasons": {
+        "expertise": {
+          "title": "15+ Years Expertise",
+          "description": "Deep industry knowledge with thousands of successful LED display installations worldwide."
+        },
+        "quality": {
+          "title": "Premium Quality", 
+          "description": "Only the highest grade components with rigorous testing and international certifications."
+        },
+        "support": {
+          "title": "24/7 Support",
+          "description": "Round-the-clock technical support and maintenance services for maximum uptime."
+        },
+        "custom": {
+          "title": "Custom Solutions",
+          "description": "Tailored LED display solutions designed specifically for your unique requirements."
+        },
+        "delivery": {
+          "title": "Fast Delivery",
+          "description": "Express shipping worldwide with tracking and secure packaging for safe arrival."
+        },
+        "warranty": {
+          "title": "Comprehensive Warranty",
+          "description": "Extended warranties and guarantee programs for complete peace of mind."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Transform Your Display Experience?",
+      "subtitle": "Get a free consultation and quote for your LED display project. Our experts are ready to help you choose the perfect solution.",
+      "ctaPrimary": "Get Free Quote",
+      "ctaSecondary": "Browse Catalog",
+      "emergency": {
+        "text": "Need urgent support?",
+        "phone": "+1 (555) 123-4567"
+      }
+    },
+    "trustSignals": {
+      "projects": "Projects Delivered",
+      "experience": "Years Experience", 
+      "uptime": "Uptime Guarantee",
+      "support": "Technical Support"
     }
   },
   "common": {

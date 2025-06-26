@@ -11,18 +11,138 @@
     "about": "À Propos",
     "blog": "Blog",
     "contact": "Contact"
-  },
-  "homepage": {
+  },  "homepage": {
     "hero": {
+      "trustIndicators": {
+        "experience": "Plus de 15 ans d'expérience",
+        "installations": "Plus de 10 000 installations", 
+        "support": "Support 24/7"
+      },
       "title": "Solutions d'Affichage LED Professionnelles",
-      "subtitle": "Écrans LED premium extérieurs, intérieurs et courbés avec pièces complètes et services d'installation",
-      "cta": "Explorer les Solutions"
+      "subtitle": "Écrans LED Extérieurs, Intérieurs et Courbés Premium avec Pièces Complètes et Services d'Installation",
+      "valueProposition": "Des petits écrans commerciaux aux écrans de stade massifs. Obtenez une technologie d'affichage LED de pointe avec des performances garanties et un support à vie.",
+      "ctaPrimary": "Voir les Écrans LED",
+      "ctaSecondary": "Obtenir un Devis Gratuit",
+      "socialProof": {
+        "projects": "Projets Terminés",
+        "uptime": "Garantie de Disponibilité", 
+        "response": "Réponse Support"
+      }
     },
-    "features": {
-      "outdoor": "Écrans LED Extérieurs",
-      "indoor": "Écrans LED Intérieurs",
-      "curved": "Écrans LED Courbés",
-      "parts": "Composants et Pièces LED"
+    "categories": {
+      "title": "Solutions d'Affichage LED pour Tous les Besoins",
+      "subtitle": "Des panneaux publicitaires extérieurs aux écrans commerciaux intérieurs, nous fournissons une technologie LED de pointe pour toutes les applications",
+      "outdoor": {
+        "title": "Écrans LED Extérieurs",
+        "description": "Écrans résistants aux intempéries parfaits pour les panneaux publicitaires, stades et publicité extérieure. Certifié IP65 avec une luminosité élevée jusqu'à 10 000 nits.",
+        "features": {
+          "waterproof": "Certification Étanche IP65",
+          "brightness": "Haute Luminosité (jusqu'à 10 000 nits)",
+          "resistant": "Résistant aux UV et à la Corrosion"
+        },
+        "cta": "Voir les Écrans Extérieurs"
+      },
+      "indoor": {
+        "title": "Écrans LED Intérieurs", 
+        "description": "Écrans intérieurs haute résolution pour commerces, entreprises et lieux de divertissement. Pas de pixel ultra-fin pour des images cristallines.",
+        "features": {
+          "pixelPitch": "Pas de Pixel Ultra-Fin (P0.9-P10)",
+          "resolution": "Support Résolution 4K/8K",
+          "efficient": "Conception Économe en Énergie"
+        },
+        "cta": "Voir les Écrans Intérieurs"
+      },
+      "curved": {
+        "title": "Écrans LED Courbés",
+        "description": "Écrans LED courbés et flexibles innovants pour installations uniques. Parfait pour l'intégration architecturale créative et les expériences immersives.",
+        "features": {
+          "flexible": "Conception Courbée Flexible",
+          "viewing": "Angles de Vision 360°", 
+          "custom": "Formes Personnalisées Disponibles"
+        },
+        "cta": "Voir les Écrans Courbés"
+      }
+    },
+    "parts": {
+      "title": "Pièces et Composants d'Affichage LED Complets",
+      "subtitle": "Tout ce dont vous avez besoin pour l'installation, la maintenance et les mises à niveau d'écrans LED - des modules individuels aux systèmes de contrôle complets",
+      "components": {
+        "modules": {
+          "title": "Modules LED",
+          "description": "Modules LED de haute qualité en divers pas de pixel"
+        },
+        "control": {
+          "title": "Systèmes de Contrôle",
+          "description": "Contrôleurs avancés et processeurs vidéo"
+        },
+        "power": {
+          "title": "Alimentations", 
+          "description": "Solutions d'alimentation fiables pour écrans LED"
+        },
+        "mounting": {
+          "title": "Matériel de Montage",
+          "description": "Solutions de montage et de gréement professionnelles"
+        }
+      },
+      "cta": "Voir Toutes les Pièces LED"
+    },
+    "industries": {
+      "title": "Fait Confiance par les Industries Leader",
+      "subtitle": "Nos solutions d'affichage LED alimentent le succès dans divers secteurs du monde entier",
+      "sectors": {
+        "retail": "Commerce & Shopping",
+        "sports": "Sports & Stades", 
+        "transportation": "Transport",
+        "corporate": "Entreprise & Événements",
+        "entertainment": "Divertissement",
+        "education": "Éducation"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi Choisir SyFr Electronics ?",
+      "subtitle": "Expertise leader de l'industrie soutenue par des résultats prouvés",
+      "reasons": {
+        "expertise": {
+          "title": "Plus de 15 ans d'Expertise",
+          "description": "Connaissance approfondie de l'industrie avec des milliers d'installations d'écrans LED réussies dans le monde."
+        },
+        "quality": {
+          "title": "Qualité Premium", 
+          "description": "Seulement les composants de la plus haute qualité avec des tests rigoureux et des certifications internationales."
+        },
+        "support": {
+          "title": "Support 24/7",
+          "description": "Support technique et services de maintenance 24h/24 pour un temps de fonctionnement maximal."
+        },
+        "custom": {
+          "title": "Solutions Personnalisées",
+          "description": "Solutions d'affichage LED sur mesure conçues spécifiquement pour vos exigences uniques."
+        },
+        "delivery": {
+          "title": "Livraison Rapide",
+          "description": "Expédition express dans le monde entier avec suivi et emballage sécurisé pour une arrivée en toute sécurité."
+        },
+        "warranty": {
+          "title": "Garantie Complète",
+          "description": "Garanties étendues et programmes de garantie pour une tranquillité d'esprit complète."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Prêt à Transformer Votre Expérience d'Affichage ?",
+      "subtitle": "Obtenez une consultation et un devis gratuits pour votre projet d'écran LED. Nos experts sont prêts à vous aider à choisir la solution parfaite.",
+      "ctaPrimary": "Obtenir un Devis Gratuit",
+      "ctaSecondary": "Parcourir le Catalogue",
+      "emergency": {
+        "text": "Besoin d'un support urgent ?",
+        "phone": "+1 (555) 123-4567"
+      }
+    },
+    "trustSignals": {
+      "projects": "Projets Livrés",
+      "experience": "Années d'Expérience", 
+      "uptime": "Garantie de Disponibilité",
+      "support": "Support Technique"
     }
   },
   "common": {
