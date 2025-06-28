@@ -135,7 +135,7 @@ export default function FeaturedProjectsSection() {
             </div>
             <div className="text-center ">
               <Link
-                href={`/${locale}/blog`}
+                href="/blog"
                 className="inline-flex items-center bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300"
               >
                 {t('featuredProjects.viewAllProjects')}

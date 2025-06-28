@@ -1,12 +1,11 @@
 "use client"
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useDirection } from '@/hooks/useDirection';
 import { contactInfo } from '@/data/contact';
 
 export default function FinalCTASection() {
   const t = useTranslations('homepage');
-  const locale = useLocale();
   const { isRTL } = useDirection();
 
   return (
@@ -21,7 +20,7 @@ export default function FinalCTASection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Link
-              href={`/${locale}/contact`}
+              href="/contact"
               className="group bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
             >
               {t('finalCta.ctaPrimary')}
@@ -30,7 +29,7 @@ export default function FinalCTASection() {
               </svg>
             </Link>
             <Link
-              href={`/${locale}/products`}
+              href="/products"
               className={`group border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
               {t('finalCta.ctaSecondary')}

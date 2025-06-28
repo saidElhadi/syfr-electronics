@@ -1,12 +1,11 @@
 "use client"
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { useDirection } from '@/hooks/useDirection';
 
 export default function HeroSection() {
   const t = useTranslations('homepage');
-  const locale = useLocale();
   const { isRTL } = useDirection();
 
   return (
@@ -90,7 +89,7 @@ export default function HeroSection() {
             {/* Primary CTA Buttons */}
             <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 ${isRTL ? 'justify-center lg:justify-end' : 'justify-center lg:justify-start'} items-center mb-8 md:mb-12`}>
               <Link
-                href={`/${locale}/products`}
+                href="/products"
                 className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 dark:from-cyan-600 dark:to-blue-700 dark:hover:from-cyan-700 dark:hover:to-blue-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 {t('hero.ctaPrimary')}
@@ -99,7 +98,7 @@ export default function HeroSection() {
                 </svg>
               </Link>
               <Link
-                href={`/${locale}/contact`}
+                href="/contact"
                 className="group border-2 border-slate-300 dark:border-white text-slate-700 dark:text-white hover:bg-slate-200 dark:hover:bg-white hover:text-slate-900 dark:hover:text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 {t('hero.ctaSecondary')}

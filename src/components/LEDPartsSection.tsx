@@ -1,5 +1,5 @@
 "use client"
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useDirection } from '@/hooks/useDirection';
 import Image from 'next/image';
@@ -11,7 +11,6 @@ import ledMounting from '@/assets/mounting-hardware.png';
 
 export default function LEDPartsSection() {
   const t = useTranslations('homepage');
-  const locale = useLocale();
   const { isRTL } = useDirection();
 
   const partsData = [
@@ -88,7 +87,7 @@ export default function LEDPartsSection() {
           
           {/* CTA Card */}
           <div className="group cursor-pointer col-span-2 md:col-span-2 lg:col-span-1">
-            <Link href={`/${locale}/products?category=parts`}>
+            <Link href="/products?category=parts">
               <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 h-full">
                 <div className="aspect-[6/4] md:aspect-[3/4] lg:aspect-[3/4] relative flex flex-col items-center justify-center p-6 text-white">
                   <svg className={`w-12 h-12 mb-4 ${isRTL ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

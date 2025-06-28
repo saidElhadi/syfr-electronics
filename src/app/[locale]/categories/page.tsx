@@ -1,7 +1,7 @@
 "use client"
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { useDirection } from '@/hooks/useDirection';
@@ -24,7 +24,6 @@ import virtualProductionImg from "@/assets/virtualset.jpg";
 export default function CategoriesPage() {
     const t = useTranslations('categories');
     const common = useTranslations('common');
-    const locale = useLocale();
     const { isRTL } = useDirection();
     const categories = [
         {
@@ -59,9 +58,9 @@ export default function CategoriesPage() {
                 {/* Breadcrumb */}
                 <nav className="mb-8">
                     <ol className={`flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                        <li><Link href={`/${locale}`} className="hover:text-blue-600 dark:hover:text-blue-400">{common('breadcrumbs.home')}</Link></li>
+                        <li><Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">{common('breadcrumbs.home')}</Link></li>
                         <li>/</li>
-                        <li><Link href={`/${locale}/categories`} className="hover:text-blue-600 dark:hover:text-blue-400">{common('breadcrumbs.categories')}</Link></li>
+                        <li><Link href="/categories" className="hover:text-blue-600 dark:hover:text-blue-400">{common('breadcrumbs.categories')}</Link></li>
                     </ol>
                 </nav>
                 {/* Hero Section */}
@@ -79,7 +78,7 @@ export default function CategoriesPage() {
                     {categories.map((category) => (
                         <Link
                             key={category.slug}
-                            href={`/${locale}/categories/${category.slug}`}
+                            href={`/categories/${category.slug}`}
                             className="group bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow duration-300"
                         >
                             <div className="aspect-video bg-gray-200 dark:bg-gray-700 overflow-hidden">

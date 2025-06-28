@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'Virtual Production LED Displays | SyFr Electronics',

@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { ReactNode } from 'react';
 import { useDirection } from '@/hooks/useDirection';
+import { Link } from '@/i18n/routing';
 
 export default function WhatWeDoSection() {
     const t = useTranslations('homepage.whatWeDo');
@@ -83,7 +84,7 @@ export default function WhatWeDoSection() {
                                 {t('cta.description')}
                             </p>
                             <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'justify-center sm:justify-end' : 'justify-center'}`}>
-                                <a
+                                <Link
                                     href="/products"
                                     className={`inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg ${isRTL ? 'flex-row-reverse' : ''}`}
                                 >
@@ -91,13 +92,13 @@ export default function WhatWeDoSection() {
                                     <svg className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="/contact"
                                     className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300"
                                 >
                                     {t('cta.secondaryButton')}
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

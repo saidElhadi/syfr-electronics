@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useDirection } from '@/hooks/useDirection';
 import { contactInfo } from '@/data/contact';
@@ -12,7 +12,6 @@ export default function Navigation() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations('navigation');
-  const locale = useLocale();
   const { isRTL } = useDirection();
   const { direction } = useDirection();
 
@@ -63,7 +62,7 @@ export default function Navigation() {
           }`}>
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href={`/${locale}`} className={`font-bold text-gray-900 dark:text-white transition-all duration-300 ${isScrolled ? 'text-lg' : 'text-xl'
+            <Link href="/" className={`font-bold text-gray-900 dark:text-white transition-all duration-300 ${isScrolled ? 'text-lg' : 'text-xl'
               }`}>
               {contactInfo.company}
             </Link>
@@ -73,13 +72,13 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className={`${isRTL ? 'mr-10 flex items-baseline space-x-reverse space-x-4' : 'ml-10 flex items-baseline space-x-4'}`}>
               <Link
-                href={`/${locale}`}
+                href="/"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('home')}
               </Link>
               <Link
-                href={`/${locale}/products`}
+                href="/products"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('products')}
@@ -92,7 +91,7 @@ export default function Navigation() {
                 onMouseLeave={() => setIsCategoriesOpen(false)}
               >
                 <Link
-                  href={`/${locale}/categories`}
+                  href="/categories"
                   className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                 >
                   {t('categories')}
@@ -114,7 +113,7 @@ export default function Navigation() {
                     {categories.map((category) => (
                       <Link
                         key={category.slug}
-                        href={`/${locale}/categories/${category.slug}`}
+                        href={`/categories/${category.slug}`}
                         className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
                         {t(`categoriesDropdown.${category.key}`)}
@@ -125,25 +124,25 @@ export default function Navigation() {
               </div>
 
               <Link
-                href={`/${locale}/parts`}
+                href="/parts"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('parts')}
               </Link>
               <Link
-                href={`/${locale}/about-us`}
+                href="/about-us"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('about')}
               </Link>
               <Link
-                href={`/${locale}/blog`}
+                href="/blog"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('blog')}
               </Link>
               <Link
-                href={`/${locale}/contact`}
+                href="/contact"
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {t('contact')}
@@ -190,14 +189,14 @@ export default function Navigation() {
         >
           <div className="px-2 pt-2 pb-3 mb-3 space-y-1 sm:px-3 bg-gray-50 dark:bg-gray-800 rounded-lg mt-2">
             <Link
-              href={`/${locale}`}
+              href="/"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
               {t('home')}
             </Link>
             <Link
-              href={`/${locale}/products`}
+              href="/products"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
@@ -207,7 +206,7 @@ export default function Navigation() {
             {/* Categories Section */}
             <div>
               <Link
-                href={`/${locale}/categories`}
+                href="/categories"
                 onClick={closeMenu}
                 className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
@@ -219,7 +218,7 @@ export default function Navigation() {
                 {categories.map((category) => (
                   <Link
                     key={category.slug}
-                    href={`/${locale}/categories/${category.slug}`}
+                    href={`/categories/${category.slug}`}
                     onClick={closeMenu}
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-1 text-sm transition-colors"
                   >
@@ -230,28 +229,28 @@ export default function Navigation() {
             </div>
 
             <Link
-              href={`/${locale}/parts`}
+              href="/parts"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
               {t('parts')}
             </Link>
             <Link
-              href={`/${locale}/about-us`}
+              href="/about-us"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
               {t('about')}
             </Link>
             <Link
-              href={`/${locale}/blog`}
+              href="/blog"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
               {t('blog')}
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href="/contact"
               onClick={closeMenu}
               className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >

@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import ProductSearch from "@/components/ProductSearch";
 import { useDirection } from '@/hooks/useDirection';
 import {

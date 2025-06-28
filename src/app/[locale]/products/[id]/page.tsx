@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowLeft, Heart, Share2, Star, Truck, Shield, RefreshCw, Mail, Phone } from "lucide-react";
 import { getProduct, type Product } from "@/lib/api";
 
