@@ -7,10 +7,17 @@
   "navigation": {
     "home": "Home",
     "products": "Products", 
+    "categories": "Categories",
     "parts": "Parts",
     "about": "About Us",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "categoriesDropdown": {
+      "standard": "Standard LED Displays",
+      "flexible": "Flexible LED Displays", 
+      "allinone": "All-in-One LED & Kiosks",
+      "virtualproduction": "Virtual Production LED"
+    }
   },  "homepage": {
     "hero": {
       "trustIndicators": {
@@ -19,7 +26,7 @@
         "support": "24/7 Support"
       },
       "title": "Professional LED Display Solutions",
-      "subtitle": "Premium Outdoor LED Displays, Indoor LED Screens, and Curved LED Displays with Complete Parts & Installation Services",
+      "subtitle": "Premium Outdoor LED Displays, Indoor LED Screens, and Curved LED Displays with Complete Parts & Support Services",
       "valueProposition": "From small retail displays to massive stadium screens. Get industry-leading LED display technology with guaranteed performance and lifetime support.",
       "ctaPrimary": "View LED Displays",
       "ctaSecondary": "Get Free Quote",
@@ -138,18 +145,292 @@
         "phone": "+1 (555) 123-4567"
       }
     },
+    "productCategories": {
+      "title": "Our Product Categories",
+      "subtitle": "Discover our complete range of LED display solutions, from standard panels to specialized modules for virtual production",
+      "standard": {
+        "title": "Standard Indoor/Outdoor Panels",
+        "description": "Versatile LED displays for commercial applications, advertising and signage. Proven solutions with excellent durability.",
+        "cta": "View Standard Panels"
+      },
+      "transparent": {
+        "title": "Transparent LED Modules",
+        "description": "Revolutionary transparent displays for storefronts, shopping centers and creative architectural installations.",
+        "cta": "View Transparent Modules"
+      },
+      "flexible": {
+        "title": "Flexible/Creative LED Modules",
+        "description": "Curved and flexible LED displays for artistic installations, columns, curved surfaces and unique architectural projects.",
+        "cta": "View Flexible Modules"
+      },
+      "allInOne": {
+        "title": "All-in-One/Poster Displays",
+        "description": "Compact and ready-to-use display solutions for retail, offices and event spaces. Simplified installation.",
+        "cta": "View All-in-One Displays"
+      },
+      "xrVp": {
+        "title": "Specialized Modules for XR/Virtual Production",
+        "description": "High-performance LED displays for virtual production studios, extended reality and professional immersive environments.",
+        "cta": "View XR/VP Solutions"
+      },
+      "interactive": {
+        "title": "Interactive LED Solutions",
+        "description": "Touch screens and interactive LED displays for customer engagement, presentations and interactive installations.",
+        "cta": "View Interactive Solutions"
+      },
+      "viewAllProducts": "Browse All Products"
+    },
+    "featuredProjects": {
+      "title": "Featured Projects & Case Studies",
+      "subtitle": "Discover how our LED display solutions transform spaces and create exceptional experiences",
+      "stadium": {
+        "title": "2000m² Stadium Installation",
+        "description": "Giant P6 outdoor LED display for a major stadium, weather-resistant with optimized brightness for television broadcasting.",
+        "cta": "Read Study"
+      },
+      "retail": {
+        "title": "Retail Chain 50+ Stores",
+        "description": "Deployment of transparent LED displays in 50+ store windows, increasing customer engagement by 40%.",
+        "cta": "Read Study"
+      },
+      "virtualProduction": {
+        "title": "360° Virtual Production Studio",
+        "description": "360° immersive LED wall for virtual production studio with cinema color accuracy and perfect synchronization.",
+        "cta": "Read Study"
+      },
+      "viewAllProjects": "View All Projects"
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "description1Start": "We are your ",
+      "description1Highlight": "direct connection",
+      "description1End": " to Shenzhen's LED display manufacturing hub - the world's largest electronics manufacturing center.",
+      "description2Start": "Through our extensive supply chain network in China, we source high-quality LED displays at the ",
+      "description2Highlight": "best possible prices",
+      "description2End": " for any quality level you need.",
+      "callout": "From budget-friendly options to premium displays, we eliminate the middleman and pass the savings directly to you.",
+      "supplyChain": {
+        "title": "Supply Chain Network",
+        "subtitle": "Shenzhen, China → Global Markets",
+        "features": {
+          "manufacturers": "200+ Verified Manufacturers",
+          "pricing": "Real-time Price Monitoring",
+          "quality": "Quality Control Partners",
+          "shipping": "Global Shipping Network"
+        }
+      },
+      "advantages": {
+        "title": "Why Choose Our Supply Chain Approach",
+        "items": {
+          "pricing": {
+            "title": "Unbeatable Prices",
+            "description": "Direct access to Shenzhen's manufacturing hub means competitive pricing"
+          },
+          "supplyChain": {
+            "title": "Supply Chain Mastery",
+            "description": "Deep connections throughout China's LED display ecosystem"
+          },
+          "quality": {
+            "title": "Quality Assurance",
+            "description": "We source from verified manufacturers with proven track records"
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready to Get the Best LED Display Prices?",
+        "description": "Let us connect you directly to Shenzhen's finest manufacturers and secure unbeatable pricing for your LED display needs.",
+        "primaryButton": "Browse Products",
+        "secondaryButton": "Get Price Quote"
+      }
+    },
     "trustSignals": {
-      "projects": "Projects Delivered",
-      "experience": "Years Experience", 
-      "uptime": "Uptime Guarantee",
-      "support": "Technical Support"
+      "projects": {
+        "title": "Projects Delivered",
+        "description": "Successful LED display installations worldwide"
+      },
+      "experience": {
+        "title": "Years Experience",
+        "description": "Years of expertise in LED display technology"
+      },
+      "certification": {
+        "title": "ISO 9001 Certified",
+        "description": "Quality management system certification"
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "Round-the-clock customer support"
+      }
+    },
+    "dev": {
+      "title": "Development Playground",
+      "description": "This page is for testing components during development.",
+      "componentTesting": "Component Testing Area",
+      "componentDescription": "Add your components below for testing:",
+      "componentPlaceholder": "Your components go here...",
+      "sectionTesting": "Full Width Section Testing",
+      "sectionDescription": "Test full-width sections and layouts below. This area spans the entire width of the viewport.",
+      "sectionPlaceholder": "Your full-width sections go here..."
     }
   },
   "common": {
     "learnMore": "Learn More",
     "getQuote": "Get Quote",
     "viewAll": "View All",
-    "searchPlaceholder": "Search products..."
+    "searchPlaceholder": "Search products...",
+    "breadcrumbs": {
+      "home": "Home",
+      "categories": "Categories"
+    }
+  },
+  "categories": {
+    "title": "LED Display Categories",
+    "subtitle": "Explore our comprehensive range of LED display solutions designed for every application and industry need.",
+    "exploreCategory": "Explore Category",
+    "standard": {
+      "title": "Standard LED Displays - Indoor & Outdoor",
+      "description": "High-quality LED displays for both indoor and outdoor applications with superior brightness and durability.",
+      "pageTitle": "Standard LED Displays",
+      "pageSubtitle": "Indoor & Outdoor Solutions",
+      "pageDescription": "Our standard LED displays offer exceptional image quality and reliability for both indoor and outdoor applications. From retail spaces to outdoor advertising, these displays deliver vibrant colors and sharp details.",
+      "features": {
+        "brightness": "High Brightness",
+        "weatherResistant": "Weather Resistant",
+        "energyEfficient": "Energy Efficient",
+        "easyInstallation": "Easy Installation"
+      },
+      "ctaTitle": "Need a Custom Solution?",
+      "ctaDescription": "Our team can help you design the perfect LED display solution for your specific requirements.",
+      "ctaButton": "Contact Our Experts"
+    },
+    "flexible": {
+      "title": "Flexible LED Displays",
+      "description": "Curved and flexible LED solutions that adapt to any creative vision and architectural requirement.",
+      "pageTitle": "Flexible LED Displays",
+      "pageSubtitle": "Bend Reality with Curved Technology",
+      "pageDescription": "Transform any space with our flexible LED displays that can bend, curve, and adapt to any creative vision. Perfect for unique architectural designs and immersive installations that captivate audiences.",
+      "features": {
+        "flexibility": "360° Flexibility",
+        "seamlessCurves": "Seamless Curves",
+        "creativeFreedom": "Creative Freedom",
+        "lightweightDesign": "Lightweight Design"
+      },
+      "applicationsTitle": "Applications",
+      "applications": {
+        "retail": "Curved Retail Displays",
+        "architectural": "Architectural Integration",
+        "creative": "Creative Installations",
+        "column": "Column Wrapping",
+        "cylindrical": "Cylindrical Displays",
+        "wave": "Wave-shaped Screens"
+      },
+      "ctaTitle": "Ready to Bend the Rules?",
+      "ctaDescription": "Let us help you create an unforgettable flexible LED display installation.",
+      "ctaButton": "Start Your Project"
+    },
+    "allinone": {
+      "title": "All-in-One LED Displays & Kiosks",
+      "description": "Complete display solutions with integrated hardware for interactive kiosks and standalone applications.",
+      "pageTitle": "All-in-One LED Displays & Kiosks",
+      "pageSubtitle": "Complete Interactive Solutions",
+      "pageDescription": "Streamline your deployment with our all-in-one LED display solutions. These complete systems include integrated computing, touch functionality, and content management, making them perfect for retail, hospitality, and information displays.",
+      "features": {
+        "integratedHardware": "Integrated Hardware",
+        "touchInteractive": "Touch Interactive",
+        "plugPlay": "Plug & Play",
+        "remoteManagement": "Remote Management"
+      },
+      "whyChooseTitle": "Why Choose All-in-One Solutions?",
+      "featuresList": {
+        "plugPlay": {
+          "title": "Plug & Play Setup",
+          "description": "Ready to use out of the box with minimal installation requirements."
+        },
+        "integratedComputing": {
+          "title": "Integrated Computing",
+          "description": "Built-in media players and computing systems eliminate external hardware."
+        },
+        "touchCapability": {
+          "title": "Touch Capability",
+          "description": "Interactive touch functionality for engaging user experiences."
+        },
+        "remoteManagement": {
+          "title": "Remote Management",
+          "description": "Monitor and control your displays remotely through cloud platforms."
+        }
+      },
+      "industriesTitle": "Perfect for These Industries",
+      "ctaTitle": "Simplify Your Display Solution",
+      "ctaDescription": "Get everything you need in one complete package. No additional hardware required.",
+      "ctaButton": "Request Quote"
+    },
+    "virtualproduction": {
+      "title": "Virtual Production LED Displays",
+      "description": "Professional-grade LED walls designed specifically for virtual production and XR applications.",
+      "pageTitle": "Virtual Production LED Displays",
+      "pageSubtitle": "Professional XR & Film Production",
+      "pageDescription": "Transform your production workflow with our professional-grade virtual production LED displays. Designed specifically for film studios, broadcast environments, and XR applications with ultra-low latency and cinema-quality color reproduction.",
+      "features": {
+        "ultraLowLatency": "Ultra-Low Latency",
+        "cinemaQuality": "Cinema Quality",
+        "cameraOptimized": "Camera Optimized",
+        "realtimeRendering": "Real-time Rendering"
+      },
+      "specificationsTitle": "Professional Specifications",
+      "specifications": {
+        "latency": {
+          "title": "Ultra-Low Latency",
+          "value": "< 1ms",
+          "description": "Critical for real-time virtual production workflows"
+        },
+        "refreshRate": {
+          "title": "High Refresh Rate",
+          "value": "7680Hz",
+          "description": "Eliminates flicker and moiré patterns on camera"
+        },
+        "colorAccuracy": {
+          "title": "Color Accuracy",
+          "value": "Rec.709",
+          "description": "Professional color space for film and broadcast"
+        },
+        "brightnessControl": {
+          "title": "Brightness Control",
+          "value": "0.1-1200 nits",
+          "description": "Perfect brightness matching for any scene"
+        }
+      },
+      "applicationsTitle": "Applications",
+      "applications": {
+        "film": "Film & TV Production",
+        "broadcast": "Broadcast Studios",
+        "xr": "XR Experiences",
+        "virtualEvents": "Virtual Events",
+        "training": "Training Simulations",
+        "product": "Product Visualization"
+      },
+      "technicalTitle": "Why Virtual Production Demands the Best",
+      "technicalFeatures": {
+        "cameraOptimization": {
+          "title": "Camera Optimization",
+          "description": "Our displays are specifically engineered to work flawlessly with professional cameras, eliminating moiré patterns and flicker that can ruin a shot."
+        },
+        "realtimePerformance": {
+          "title": "Real-time Performance",
+          "description": "Ultra-low latency ensures perfect synchronization between virtual backgrounds and live action for seamless compositing."
+        }
+      },
+      "ctaTitle": "Ready for Professional Production?",
+      "ctaDescription": "Contact our virtual production specialists to design your perfect LED wall solution.",
+      "ctaButton": "Contact VP Specialists"
+    },
+    "common": {
+      "breadcrumbs": {
+        "home": "Home",
+        "categories": "Categories"
+      },
+      "featuredProducts": "Featured Products",
+      "keyFeatures": "Key Features:",
+      "viewDetails": "View Details"
+    }
   },
   "footer": {
     "company": "SyFr Electronics",

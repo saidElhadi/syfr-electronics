@@ -76,3 +76,75 @@ html {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Logical properties for RTL support */
+.margin-inline-start-auto {
+  margin-inline-start: auto;
+}
+
+.margin-inline-end-auto {
+  margin-inline-end: auto;
+}
+
+.padding-inline-start-4 {
+  padding-inline-start: 1rem;
+}
+
+.padding-inline-end-4 {
+  padding-inline-end: 1rem;
+}
+
+/* RTL-aware animations */
+[dir="rtl"] .slide-in-right {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+[dir="ltr"] .slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Arabic font optimization */
+[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', 'Cairo', Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+/* RTL-aware flex positioning */
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}

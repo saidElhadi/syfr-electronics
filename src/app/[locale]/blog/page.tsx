@@ -1,7 +1,7 @@
 export default function Blog() {
   return (
     <div className="min-h-screen p-8 sm:p-20">
-      <main className="max-w-6xl mx-auto">
+      <main className="max-w-7xl mx-auto">
         <section className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">SyFr Electronics Blog</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">

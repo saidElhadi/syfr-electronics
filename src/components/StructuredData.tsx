@@ -1,31 +1,32 @@
 import Script from 'next/script';
+import { contactInfo } from '@/data/contact';
 
 export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "SyFr Electronics",
-    "description": "Professional LED display solutions provider specializing in outdoor, indoor, and curved LED displays with complete parts and installation services.",
-    "url": "https://syfr-electronics.com",
-    "logo": "https://syfr-electronics.com/logo.png",
-    "image": "https://syfr-electronics.com/led-display-hero.jpg",
-    "telephone": "+1-555-123-4567",
-    "email": "info@syfr-electronics.com",
+    "name": contactInfo.company,
+    "description": contactInfo.description,
+    "url": contactInfo.website,
+    "logo": `${contactInfo.website}/logo.png`,
+    "image": `${contactInfo.website}/led-display-hero.jpg`,
+    "telephone": contactInfo.phone,
+    "email": contactInfo.email,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Electronics Ave",
-      "addressLocality": "Tech City",
-      "addressRegion": "TC",
-      "postalCode": "12345",
-      "addressCountry": "US"
+      "streetAddress": contactInfo.address.street,
+      "addressLocality": contactInfo.address.city,
+      "addressRegion": contactInfo.address.state,
+      "postalCode": contactInfo.address.postalCode,
+      "addressCountry": contactInfo.address.country
     },
     "sameAs": [
-      "https://www.linkedin.com/company/syfr-electronics",
-      "https://twitter.com/syfrelectronics",
-      "https://www.facebook.com/syfrelectronics"
+      contactInfo.social.linkedin,
+      contactInfo.social.twitter,
+      contactInfo.social.facebook
     ],
-    "foundingDate": "2008",
-    "numberOfEmployees": "50-100",
+    "foundingDate": contactInfo.foundingYear,
+    "numberOfEmployees": contactInfo.employees,
     "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -58,16 +59,16 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "SyFr Electronics",
-    "url": "https://syfr-electronics.com",
-    "description": "Professional LED display solutions including outdoor, indoor, and curved LED displays with complete parts and installation services.",
+    "name": contactInfo.company,
+    "url": contactInfo.website,
+    "description": contactInfo.description,
     "publisher": {
       "@type": "Organization",
-      "name": "SyFr Electronics"
+      "name": contactInfo.company
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://syfr-electronics.com/search?q={search_term_string}",
+      "target": `${contactInfo.website}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };
@@ -76,10 +77,10 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "LED Display Solutions",
-    "description": "Complete LED display solutions including design, installation, maintenance, and support services for outdoor, indoor, and curved LED displays.",
+    "description": contactInfo.description,
     "provider": {
       "@type": "Organization",
-      "name": "SyFr Electronics"
+      "name": contactInfo.company
     },
     "areaServed": "Worldwide",
     "hasOfferCatalog": {
@@ -122,7 +123,7 @@ export default function StructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://syfr-electronics.com"
+        "item": contactInfo.website
       }
     ]
   };

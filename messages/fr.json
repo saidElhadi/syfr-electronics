@@ -7,10 +7,17 @@
   "navigation": {
     "home": "Accueil",
     "products": "Produits",
+    "categories": "Catégories",
     "parts": "Pièces",
     "about": "À Propos",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "categoriesDropdown": {
+      "standard": "Écrans LED Standard",
+      "flexible": "Écrans LED Flexibles",
+      "allinone": "LED Tout-en-Un & Kiosques", 
+      "virtualproduction": "LED Production Virtuelle"
+    }
   },  "homepage": {
     "hero": {
       "trustIndicators": {
@@ -138,22 +145,296 @@
         "phone": "+1 (555) 123-4567"
       }
     },
+    "productCategories": {
+      "title": "Nos Catégories de Produits",
+      "subtitle": "Découvrez notre gamme complète de solutions d'affichage LED, des panneaux standards aux modules spécialisés pour la production virtuelle",
+      "standard": {
+        "title": "Panneaux Intérieurs/Extérieurs Standards",
+        "description": "Écrans LED polyvalents pour applications commerciales, publicité et signalisation. Solutions éprouvées avec excellente durabilité.",
+        "cta": "Voir les Panneaux Standards"
+      },
+      "transparent": {
+        "title": "Modules LED Transparents",
+        "description": "Affichages transparents révolutionnaires pour vitrines, centres commerciaux et installations architecturales créatives.",
+        "cta": "Voir les Modules Transparents"
+      },
+      "flexible": {
+        "title": "Modules LED Flexibles/Créatifs",
+        "description": "Écrans LED courbés et flexibles pour installations artistiques, colonnes, surfaces courbes et projets architecturaux uniques.",
+        "cta": "Voir les Modules Flexibles"
+      },
+      "allInOne": {
+        "title": "Affichages Tout-en-Un/Poster",
+        "description": "Solutions d'affichage compactes et prêtes à l'emploi pour commerces, bureaux et espaces événementiels. Installation simplifiée.",
+        "cta": "Voir les Affichages Tout-en-Un"
+      },
+      "xrVp": {
+        "title": "Modules Spécialisés XR/Production Virtuelle",
+        "description": "Écrans LED haute performance pour studios de production virtuelle, réalité étendue et environnements immersifs professionnels.",
+        "cta": "Voir les Solutions XR/VP"
+      },
+      "interactive": {
+        "title": "Solutions LED Interactives",
+        "description": "Écrans tactiles et affichages LED interactifs pour l'engagement client, présentations et installations interactives.",
+        "cta": "Voir les Solutions Interactives"
+      },
+      "viewAllProducts": "Parcourir Tous les Produits"
+    },
+    "featuredProjects": {
+      "title": "Projets Phares & Études de Cas",
+      "subtitle": "Découvrez comment nos solutions d'affichage LED transforment les espaces et créent des expériences exceptionnelles",
+      "stadium": {
+        "title": "Installation Stade de 2000m²",
+        "description": "Écran LED extérieur géant P6 pour un stade majeur, résistant aux intempéries avec luminosité optimisée pour la diffusion télévisée.",
+        "cta": "Lire l'Étude"
+      },
+      "retail": {
+        "title": "Réseau Commercial 50+ Magasins",
+        "description": "Déploiement d'écrans LED transparents dans les vitrines de 50+ magasins, augmentant l'engagement client de 40%.",
+        "cta": "Lire l'Étude"
+      },
+      "virtualProduction": {
+        "title": "Studio Production Virtuelle 360°",
+        "description": "Mur LED immersif 360° pour studio de production virtuelle avec précision couleur cinéma et synchronisation parfaite.",
+        "cta": "Lire l'Étude"
+      },
+      "viewAllProjects": "Voir Tous les Projets"
+    },
+    "whatWeDo": {
+      "title": "Ce Que Nous Faisons",
+      "description1Start": "Nous sommes votre ",
+      "description1Highlight": "connexion directe",
+      "description1End": " avec le centre de fabrication d'écrans LED de Shenzhen - le plus grand centre de fabrication électronique au monde.",
+      "description2Start": "Grâce à notre vaste réseau de chaîne d'approvisionnement en Chine, nous nous approvisionnons en écrans LED de haute qualité aux ",
+      "description2Highlight": "meilleurs prix possibles",
+      "description2End": " pour tout niveau de qualité dont vous avez besoin.",
+      "callout": "Des options économiques aux écrans premium, nous éliminons l'intermédiaire et vous transmettons directement les économies.",
+      "supplyChain": {
+        "title": "Réseau de Chaîne d'Approvisionnement",
+        "subtitle": "Shenzhen, Chine → Marchés Mondiaux",
+        "features": {
+          "manufacturers": "200+ Fabricants Vérifiés",
+          "pricing": "Surveillance des Prix en Temps Réel",
+          "quality": "Partenaires de Contrôle Qualité",
+          "shipping": "Réseau d'Expédition Mondiale"
+        }
+      },
+      "advantages": {
+        "title": "Pourquoi Choisir Notre Approche de Chaîne d'Approvisionnement",
+        "items": {
+          "pricing": {
+            "title": "Prix Imbattables",
+            "description": "L'accès direct au centre de fabrication de Shenzhen signifie des prix compétitifs"
+          },
+          "supplyChain": {
+            "title": "Maîtrise de la Chaîne d'Approvisionnement",
+            "description": "Connexions profondes dans tout l'écosystème d'affichage LED de la Chine"
+          },
+          "quality": {
+            "title": "Assurance Qualité",
+            "description": "Nous nous approvisionnons auprès de fabricants vérifiés avec des antécédents prouvés"
+          }
+        }
+      },
+      "cta": {
+        "title": "Prêt à Obtenir les Meilleurs Prix d'Écrans LED ?",
+        "description": "Laissez-nous vous connecter directement aux meilleurs fabricants de Shenzhen et sécuriser des prix imbattables pour vos besoins d'écrans LED.",
+        "primaryButton": "Parcourir les Produits",
+        "secondaryButton": "Obtenir un Devis de Prix"
+      }
+    },
     "trustSignals": {
-      "projects": "Projets Livrés",
-      "experience": "Années d'Expérience", 
-      "uptime": "Garantie de Disponibilité",
-      "support": "Support Technique"
+      "projects": {
+        "title": "Projets Livrés",
+        "description": "Installations réussies d'écrans LED dans le monde entier"
+      },
+      "experience": {
+        "title": "Années d'Expérience",
+        "description": "Années d'expertise en technologie d'affichage LED"
+      },
+      "certification": {
+        "title": "Certifié ISO 9001",
+        "description": "Certification du système de gestion de la qualité"
+      },
+      "support": {
+        "title": "Support Technique",
+        "description": "Support client 24h/24 et 7j/7"
+      }
     }
   },
   "common": {
     "learnMore": "En Savoir Plus",
     "getQuote": "Obtenir un Devis",
     "viewAll": "Voir Tout",
-    "searchPlaceholder": "Rechercher des produits..."
+    "searchPlaceholder": "Rechercher des produits...",
+    "breadcrumbs": {
+      "home": "Accueil",
+      "categories": "Catégories"
+    }
   },
   "footer": {
     "company": "SyFr Electronics",
     "description": "Fournisseur de solutions d'affichage LED professionnel avec plus de 15 ans d'expérience",
     "allRightsReserved": "Tous droits réservés"
+  },
+  "dev": {
+    "title": "Terrain de Développement",
+    "description": "Cette page est pour tester les composants pendant le développement.",
+    "componentTesting": "Zone de Test des Composants",
+    "componentDescription": "Ajoutez vos composants ci-dessous pour les tester :",
+    "componentPlaceholder": "Vos composants vont ici...",
+    "sectionTesting": "Test de Section Pleine Largeur",
+    "sectionDescription": "Testez les sections et mises en page pleine largeur ci-dessous. Cette zone s'étend sur toute la largeur de la fenêtre.",
+    "sectionPlaceholder": "Vos sections pleine largeur vont ici..."
+  },
+  "categories": {
+    "title": "Catégories d'Écrans LED",
+    "subtitle": "Explorez notre gamme complète de solutions d'affichage LED conçues pour chaque application et besoin industriel.",
+    "exploreCategory": "Explorer la Catégorie",
+    "standard": {
+      "title": "Écrans LED Standard - Intérieur et Extérieur",
+      "description": "Écrans LED de haute qualité pour applications intérieures et extérieures avec luminosité supérieure et durabilité.",
+      "pageTitle": "Écrans LED Standard",
+      "pageSubtitle": "Solutions Intérieures et Extérieures",
+      "pageDescription": "Nos écrans LED standard offrent une qualité d'image exceptionnelle et une fiabilité pour les applications intérieures et extérieures. Des espaces commerciaux à la publicité extérieure, ces écrans offrent des couleurs vives et des détails nets.",
+      "features": {
+        "brightness": "Haute Luminosité",
+        "weatherResistant": "Résistant aux Intempéries",
+        "energyEfficient": "Économe en Énergie",
+        "easyInstallation": "Installation Facile"
+      },
+      "ctaTitle": "Besoin d'une Solution Personnalisée ?",
+      "ctaDescription": "Notre équipe peut vous aider à concevoir la solution d'affichage LED parfaite pour vos besoins spécifiques.",
+      "ctaButton": "Contacter Nos Experts"
+    },
+    "flexible": {
+      "title": "Écrans LED Flexibles",
+      "description": "Solutions LED courbées et flexibles qui s'adaptent à toute vision créative et exigence architecturale.",
+      "pageTitle": "Écrans LED Flexibles",
+      "pageSubtitle": "Pliez la Réalité avec la Technologie Courbée",
+      "pageDescription": "Transformez n'importe quel espace avec nos écrans LED flexibles qui peuvent se plier, se courber et s'adapter à toute vision créative. Parfait pour des conceptions architecturales uniques et des installations immersives qui captivent les publics.",
+      "features": {
+        "flexibility": "Flexibilité 360°",
+        "seamlessCurves": "Courbes Transparentes",
+        "creativeFreedom": "Liberté Créative",
+        "lightweightDesign": "Design Léger"
+      },
+      "applicationsTitle": "Applications",
+      "applications": {
+        "retail": "Écrans Commerciaux Courbés",
+        "architectural": "Intégration Architecturale",
+        "creative": "Installations Créatives",
+        "column": "Enveloppement de Colonnes",
+        "cylindrical": "Écrans Cylindriques",
+        "wave": "Écrans en Forme de Vague"
+      },
+      "ctaTitle": "Prêt à Plier les Règles ?",
+      "ctaDescription": "Laissez-nous vous aider à créer une installation d'écran LED flexible inoubliable.",
+      "ctaButton": "Démarrer Votre Projet"
+    },
+    "allinone": {
+      "title": "Écrans LED Tout-en-Un et Kiosques",
+      "description": "Solutions d'affichage complètes avec matériel intégré pour kiosques interactifs et applications autonomes.",
+      "pageTitle": "Écrans LED Tout-en-Un et Kiosques",
+      "pageSubtitle": "Solutions Interactives Complètes",
+      "pageDescription": "Simplifiez votre déploiement avec nos solutions d'affichage LED tout-en-un. Ces systèmes complets incluent l'informatique intégrée, la fonctionnalité tactile et la gestion de contenu, les rendant parfaits pour le commerce, l'hôtellerie et les affichages d'information.",
+      "features": {
+        "integratedHardware": "Matériel Intégré",
+        "touchInteractive": "Interaction Tactile",
+        "plugPlay": "Plug & Play",
+        "remoteManagement": "Gestion à Distance"
+      },
+      "whyChooseTitle": "Pourquoi Choisir les Solutions Tout-en-Un ?",
+      "featuresList": {
+        "plugPlay": {
+          "title": "Configuration Plug & Play",
+          "description": "Prêt à l'emploi avec des exigences d'installation minimales."
+        },
+        "integratedComputing": {
+          "title": "Informatique Intégrée",
+          "description": "Les lecteurs multimédias et systèmes informatiques intégrés éliminent le matériel externe."
+        },
+        "touchCapability": {
+          "title": "Capacité Tactile",
+          "description": "Fonctionnalité tactile interactive pour des expériences utilisateur engageantes."
+        },
+        "remoteManagement": {
+          "title": "Gestion à Distance",
+          "description": "Surveillez et contrôlez vos écrans à distance via des plateformes cloud."
+        }
+      },
+      "industriesTitle": "Parfait pour Ces Industries",
+      "ctaTitle": "Simplifiez Votre Solution d'Affichage",
+      "ctaDescription": "Obtenez tout ce dont vous avez besoin dans un package complet. Aucun matériel supplémentaire requis.",
+      "ctaButton": "Demander un Devis"
+    },
+    "virtualproduction": {
+      "title": "Écrans LED de Production Virtuelle",
+      "description": "Murs LED de qualité professionnelle conçus spécifiquement pour la production virtuelle et les applications XR.",
+      "pageTitle": "Écrans LED de Production Virtuelle",
+      "pageSubtitle": "Production XR et Cinématographique Professionnelle",
+      "pageDescription": "Transformez votre flux de travail de production avec nos écrans LED de production virtuelle de qualité professionnelle. Conçus spécifiquement pour les studios de cinéma, les environnements de diffusion et les applications XR avec une latence ultra-faible et une reproduction couleur de qualité cinéma.",
+      "features": {
+        "ultraLowLatency": "Latence Ultra-Faible",
+        "cinemaQuality": "Qualité Cinéma",
+        "cameraOptimized": "Optimisé Caméra",
+        "realtimeRendering": "Rendu Temps Réel"
+      },
+      "specificationsTitle": "Spécifications Professionnelles",
+      "specifications": {
+        "latency": {
+          "title": "Latence Ultra-Faible",
+          "value": "< 1ms",
+          "description": "Critique pour les flux de travail de production virtuelle en temps réel"
+        },
+        "refreshRate": {
+          "title": "Taux de Rafraîchissement Élevé",
+          "value": "7680Hz",
+          "description": "Élimine le scintillement et les motifs de moiré sur caméra"
+        },
+        "colorAccuracy": {
+          "title": "Précision des Couleurs",
+          "value": "Rec.709",
+          "description": "Espace colorimétrique professionnel pour le cinéma et la diffusion"
+        },
+        "brightnessControl": {
+          "title": "Contrôle de Luminosité",
+          "value": "0.1-1200 nits",
+          "description": "Correspondance parfaite de luminosité pour toute scène"
+        }
+      },
+      "applicationsTitle": "Applications",
+      "applications": {
+        "film": "Production Cinéma et TV",
+        "broadcast": "Studios de Diffusion",
+        "xr": "Expériences XR",
+        "virtualEvents": "Événements Virtuels",
+        "training": "Simulations de Formation",
+        "product": "Visualisation de Produits"
+      },
+      "technicalTitle": "Pourquoi la Production Virtuelle Exige le Meilleur",
+      "technicalFeatures": {
+        "cameraOptimization": {
+          "title": "Optimisation Caméra",
+          "description": "Nos écrans sont spécifiquement conçus pour fonctionner parfaitement avec les caméras professionnelles, éliminant les motifs de moiré et le scintillement qui peuvent ruiner une prise."
+        },
+        "realtimePerformance": {
+          "title": "Performance Temps Réel",
+          "description": "La latence ultra-faible assure une synchronisation parfaite entre les arrière-plans virtuels et l'action en direct pour une composition transparente."
+        }
+      },
+      "ctaTitle": "Prêt pour la Production Professionnelle ?",
+      "ctaDescription": "Contactez nos spécialistes de production virtuelle pour concevoir votre solution de mur LED parfaite.",
+      "ctaButton": "Contacter les Spécialistes VP"
+    },
+    "common": {
+      "breadcrumbs": {
+        "home": "Accueil",
+        "categories": "Catégories"
+      },
+      "featuredProducts": "Produits Vedettes",
+      "keyFeatures": "Caractéristiques Clés :",
+      "viewDetails": "Voir les Détails"
+    }
   }
 }

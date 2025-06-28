@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProductSearch from "@/components/ProductSearch";
+import { useDirection } from '@/hooks/useDirection';
 import {
   getProducts,
   getParts,
@@ -13,6 +14,7 @@ import {
 } from "@/lib/api";
 
 export default function Products() {
+  const { isRTL } = useDirection();
   const [tab, setTab] = useState<"products" | "parts">("products");
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
@@ -70,7 +72,7 @@ export default function Products() {
 
   return (
     <div className="min-h-screen p-4 sm:p-10 bg-gray-50 dark:bg-gray-900">
-      <main className="max-w-6xl mx-auto">
+      <main className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">Catalog Search</h1>
 
         {/* Search and Filter */}
@@ -135,17 +137,17 @@ export default function Products() {
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h2 className="text-lg font-bold text-gray-900 dark:text-white truncate">
+                    <h2 className={`text-lg font-bold text-gray-900 dark:text-white truncate ${isRTL ? 'text-right' : 'text-left'}`}>
                       {item.name}
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mt-2">
+                    <p className={`text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mt-2 ${isRTL ? 'text-right' : 'text-left'}`}>
                       {item.description}
                     </p>
-                  </div>                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                  </div>                  <div className={`mt-4 flex items-center ${isRTL ? 'justify-between flex-row-reverse' : 'justify-between'}`}>
+                    <span className={`text-xs text-gray-500 dark:text-gray-400 ${isRTL ? 'text-right' : 'text-left'}`}>
                       Category: {item.category}
                     </span>
-                    <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm">
+                    <span className={`text-blue-600 dark:text-blue-400 font-semibold text-sm ${isRTL ? 'text-left' : 'text-right'}`}>
                       View Details
                     </span>
                   </div>

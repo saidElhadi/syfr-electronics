@@ -12,7 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'arabic': ['Noto Sans Arabic', 'Cairo', 'Arial', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-rtl'),
+  ],
 } satisfies Config;

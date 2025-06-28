@@ -1,4 +1,5 @@
 import React from "react";
+import { useDirection } from '@/hooks/useDirection';
 
 interface ProductSearchProps {
   tab: "products" | "parts";
@@ -21,11 +22,13 @@ const ProductSearch: React.FC<ProductSearchProps> = ({
   productCategories,
   partCategories,
 }) => {
+  const { isRTL } = useDirection();
+  
   return (
     <div className="mb-8 flex flex-col gap-4">
       <div className="flex justify-center gap-2 mb-2">
         <button
-          className={`px-4 py-2 rounded-l-lg border border-gray-300 dark:border-gray-700 focus:outline-none ${
+          className={`px-4 py-2 ${isRTL ? 'rounded-r-lg' : 'rounded-l-lg'} border border-gray-300 dark:border-gray-700 focus:outline-none ${
             tab === "products"
               ? "bg-white dark:bg-gray-800 font-semibold"
               : "bg-gray-100 dark:bg-gray-700"
@@ -35,7 +38,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({
           Products
         </button>
         <button
-          className={`px-4 py-2 rounded-r-lg border-t border-b border-r border-gray-300 dark:border-gray-700 focus:outline-none ${
+          className={`px-4 py-2 ${isRTL ? 'rounded-l-lg border-t border-b border-l' : 'rounded-r-lg border-t border-b border-r'} border-gray-300 dark:border-gray-700 focus:outline-none ${
             tab === "parts"
               ? "bg-white dark:bg-gray-800 font-semibold"
               : "bg-gray-100 dark:bg-gray-700"
@@ -49,12 +52,12 @@ const ProductSearch: React.FC<ProductSearchProps> = ({
         <input
           type="text"
           placeholder={`Search ${tab}...`}
-          className="w-full sm:w-72 px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none"
+          className={`w-full sm:w-72 px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none ${isRTL ? 'text-right' : 'text-left'}`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <select
-          className="w-full sm:w-60 px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none"
+          className={`w-full sm:w-60 px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none ${isRTL ? 'text-right' : 'text-left'}`}
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
