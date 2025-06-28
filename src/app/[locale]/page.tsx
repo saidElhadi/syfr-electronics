@@ -10,6 +10,7 @@ import IndustriesSection from '@/components/IndustriesSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import FinalCTASection from '@/components/FinalCTASection';
 import TrustSignalsFooter from '@/components/TrustSignalsFooter';
+import AdvantagesSection from '@/components/AdvantagesSection';
 
 export default function Home() {
   const t = useTranslations('homepage');
@@ -22,6 +23,7 @@ export default function Home() {
       <WhatWeDoSection />
       <ProductCategoriesSection />
       <FeaturedProjectsSection />
+      <AdvantagesSection />
       <LEDPartsSection />
       <IndustriesSection />
       <WhyChooseUsSection />

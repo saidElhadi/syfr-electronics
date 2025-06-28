@@ -2,6 +2,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useDirection } from '@/hooks/useDirection';
+import { contactInfo } from '@/data/contact';
 
 export default function FinalCTASection() {
   const t = useTranslations('homepage');
@@ -42,8 +43,8 @@ export default function FinalCTASection() {
           {/* Emergency Contact */}
           <div className="text-center">
             <p className="text-blue-200 mb-2">{t('finalCta.emergency.text')}</p>
-            <a href={`tel:${t('finalCta.emergency.phone')}`} className="text-white font-bold text-xl hover:text-blue-200 transition-colors">
-              📞 {t('finalCta.emergency.phone')}
+            <a href={`tel:${contactInfo.phone}`} className="text-white font-bold text-xl hover:text-blue-200 transition-colors">
+              📞 {contactInfo.phoneFormatted}
             </a>
           </div>
         </div>
