@@ -4,7 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft, Heart, Share2, Star, Truck, Shield, RefreshCw, Wrench, Zap, Mail, Phone } from "lucide-react";
-import { getPart, type Part } from "@/lib/api";
+import { getPart, type Part, type PartImage } from "@/lib/api";
 
 export default function PartDetails() {
   const params = useParams();
@@ -117,7 +117,7 @@ export default function PartDetails() {
           <div className="space-y-4">
             <div className="aspect-square rounded-lg overflow-hidden bg-white border">
               <Image
-                src={part.images[selectedImage] || '/file.svg'}
+                src={part.images[selectedImage]?.url || '/file.svg'}
                 alt={part.name}
                 width={600}
                 height={600}
@@ -137,7 +137,7 @@ export default function PartDetails() {
                     }`}
                   >
                     <Image
-                      src={image || '/file.svg'}
+                      src={image?.url || '/file.svg'}
                       alt={`${part.name} ${index + 1}`}
                       width={150}
                       height={150}

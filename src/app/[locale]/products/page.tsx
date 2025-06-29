@@ -11,6 +11,7 @@ import {
   getPartsCategories,
   type Product,
   type Part,
+  type PartImage,
 } from "@/lib/api";
 
 export default function Products() {
@@ -112,7 +113,7 @@ export default function Products() {
                 <div className="relative h-64 bg-gray-100 dark:bg-gray-700">
                   {item.images?.[0] ? (
                     <Image
-                      src={item.images[0]}
+                      src={typeof item.images[0] === 'string' ? item.images[0] : item.images[0].url}
                       alt={item.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform"

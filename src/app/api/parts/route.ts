@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CMS_BASE_URL = 'https://syfr-electronics-cms.vercel.app/api';
+const CMS_BASE_URL = process.env.CMS_BASE_URL;
 
 export async function GET(request: NextRequest) {
   try {

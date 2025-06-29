@@ -48,6 +48,12 @@ export interface Article {
   featuredImage?: string;
 }
 
+export interface PartImage {
+  url: string;
+  tags: string[];
+  order: number;
+}
+
 export interface Part {
   id: string;
   name: string;
@@ -59,7 +65,7 @@ export interface Part {
   specifications: Record<string, any> | null;
   inStock?: boolean;
   stock_quantity?: number;
-  images: string[];
+  images: PartImage[];
   created_at: string;
   updated_at: string;
   sku?: string;
