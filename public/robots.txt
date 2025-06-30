@@ -1,9 +1,0 @@
-Allow: /
-Allow: /en
-Allow: /fr
-Allow: /ar
-
-# Sitemaps
-Sitemap: https://syfrelectronics.com/sitemap.xml
-Sitemap: https://syfrelectronics.com/products-sitemap.xml
-Sitemap: https://syfrelectronics.com/blog-sitemap.xml
