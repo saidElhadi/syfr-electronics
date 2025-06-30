@@ -316,15 +316,7 @@ export default async function Blog() {
                 <p className="text-slate-600 dark:text-gray-400 mb-6">
                   We're experiencing technical difficulties. Please try again later.
                 </p>
-                <button 
-                  onClick={() => window.location.reload()} 
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                  Try Again
-                </button>
+               
               </div>
             </div>
           </div>

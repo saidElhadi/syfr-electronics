@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing'
 import Image from 'next/image';
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({ params }: { params: { slug: string } }) {
   try {
     const { slug } = await params;
     const articleResponse = await getArticleBySlug(slug);
@@ -19,7 +19,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 py-16 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              {/* Breadcrumb */}sa
+              {/* Breadcrumb */}
               <nav className="flex items-center gap-3 text-sm text-slate-500 dark:text-gray-400 mb-8">
                 <Link href="/" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                   Home
@@ -104,7 +104,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         {/* Article Content */}
         <section className="py-16">
-          <div className="container mx-auto">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <article className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12 border border-slate-200/50 dark:border-slate-700/50">
                 <div 
