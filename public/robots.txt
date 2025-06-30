@@ -1,22 +1,66 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://syfr-electronics.com/sitemap.xml
-Sitemap: https://syfr-electronics.com/products-sitemap.xml
-Sitemap: https://syfr-electronics.com/blog-sitemap.xml
-
-# Optimize crawl budget
-Crawl-delay: 1
-
-# Block admin areas
+# Disallow admin and API areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /dashboard/
+Disallow: /.well-known/
+Disallow: /private/
 
-# Allow important pages
+
+
+# Allow important pages and directories
+Allow: /en/
+Allow: /fr/
+Allow: /ar/
 Allow: /products/
+Allow: /categories/
+Allow: /parts/
 Allow: /blog/
 Allow: /about-us/
 Allow: /contact/
+Allow: /industries/
+Allow: /featured-projects/
+
+# Optimize crawl budget for different bot types
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 2
+
+User-agent: Slurp
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Crawl-delay: 3
+
+User-agent: YandexBot
+Crawl-delay: 3
+
+# Block problematic bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://syfr-electronics.com/sitemap-index.xml
+Sitemap: https://syfr-electronics.com/sitemap.xml
+Sitemap: https://syfr-electronics.com/products-sitemap.xml
+Sitemap: https://syfr-electronics.com/blog-sitemap.xml
+
+# Host directive for preferred domain
+Host: https://syfr-electronics.com
