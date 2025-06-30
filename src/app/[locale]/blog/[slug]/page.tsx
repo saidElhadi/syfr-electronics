@@ -82,13 +82,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         </section>
 
         {/* Featured Image */}
-        {article.featuredImage && (
+        {article.featured_image_url && (
           <section className="py-8">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-4xl mx-auto">
+              <div className=" mx-auto">
                 <div className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src={article.featuredImage}
+                    src={article.featured_image_url}
                     alt={article.title}
                     fill
                     className="object-cover"
@@ -105,7 +105,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         {/* Article Content */}
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <div className=" mx-auto">
               <article className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12 border border-slate-200/50 dark:border-slate-700/50">
                 <div 
                   className="prose prose-lg dark:prose-invert max-w-none
