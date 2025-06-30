@@ -12,6 +12,8 @@ Disallow: /private/
 
 
 # Allow important pages and directories
+
+Allow: /
 Allow: /en/
 Allow: /fr/
 Allow: /ar/
