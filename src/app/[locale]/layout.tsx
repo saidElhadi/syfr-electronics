@@ -31,7 +31,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://syfr-electronics.com'),
+    metadataBase: new URL('https://syfrelectronics.com'),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -43,7 +43,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://syfr-electronics.com',
+      url: 'https://syfrelectronics.com',
       siteName: 'SyFr Electronics',
       images: [
         {

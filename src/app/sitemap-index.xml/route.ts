@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
-  const baseUrl = 'https://syfr-electronics.com'
+  const baseUrl = 'https://syfrelectronics.com'
   const currentDate = new Date().toISOString()
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

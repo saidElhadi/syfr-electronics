@@ -74,5 +74,5 @@ Monitor the following in Google Search Console:
 
 For local testing, update the baseUrl in sitemap files:
 - Development: `http://localhost:3000`
-- Staging: `https://staging.syfr-electronics.com`
-- Production: `https://syfr-electronics.com`
+- Staging: `https://staging.syfrelectronics.com`
+- Production: `https://syfrelectronics.com`

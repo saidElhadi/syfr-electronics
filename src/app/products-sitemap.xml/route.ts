@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
-  const baseUrl = 'https://syfr-electronics.com'
+  const baseUrl = 'https://syfrelectronics.com'
   const locales = ['en', 'fr', 'ar']
   const currentDate = new Date().toISOString()
 
