@@ -45,6 +45,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={direction}>
+      <head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="TKDkWyy5lKMFYeRkTzZXAQ" async></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${direction === 'rtl' ? 'font-arabic' : ''}`}
       >
