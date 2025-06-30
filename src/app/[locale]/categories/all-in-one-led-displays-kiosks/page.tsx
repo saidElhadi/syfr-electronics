@@ -1,11 +1,7 @@
-import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
-import { Link } from '@/i18n/routing';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'All-in-One LED Displays & Kiosks | SyFr Electronics',
-  description: 'Complete all-in-one LED display solutions and interactive kiosks with integrated hardware for standalone applications and interactive experiences.',
-};
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function AllInOneLEDDisplaysPage() {
   const t = useTranslations('categories.allinone');

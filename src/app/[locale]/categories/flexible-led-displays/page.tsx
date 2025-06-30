@@ -1,11 +1,7 @@
-import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
-import { Link } from '@/i18n/routing';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Flexible LED Displays | SyFr Electronics',
-  description: 'Innovative flexible LED displays that bend and curve to fit any design. Perfect for creative installations and unique architectural requirements.',
-};
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function FlexibleLEDDisplaysPage() {
   const t = useTranslations('categories.flexible');

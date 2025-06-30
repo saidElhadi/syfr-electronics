@@ -1,12 +1,9 @@
+'use client';
+
 import { getArticles } from '@/lib/api';
 import { Link } from '@/i18n/routing';
-import { Metadata } from 'next';
 import Image from 'next/image';
-
-export const metadata: Metadata = {
-  title: 'SyFr Electronics Blog - Latest Electronics News & Tutorials',
-  description: 'Stay updated with the latest electronics trends, product reviews, tutorials, and industry insights from SyFr Electronics.',
-};
+import { useState, useEffect } from 'react';
 
 // Featured article card component
 function FeaturedArticleCard({ article }: { article: any }) {
@@ -150,25 +147,103 @@ function ArticleCard({ article }: { article: any }) {
   );
 }
 
-export default async function Blog() {
-  try {
-    // Get all published articles
-    const articlesResponse = await getArticles({
-      status: 'published',
-      sortBy: 'published_at',
-      sortOrder: 'desc',
-      limit: 50
-    });
+export default function Blog() {
+  const [articles, setArticles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    const articles = Array.isArray(articlesResponse) 
-      ? articlesResponse 
-      : (articlesResponse.data || []);
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Get all published articles
+        const articlesResponse = await getArticles({
+          status: 'published',
+          sortBy: 'published_at',
+          sortOrder: 'desc',
+          limit: 50
+        });
 
-    // Get featured article (first one)
-    const featuredArticle = articles[0];
-    const regularArticles = articles.slice(1);
+        const articlesData = Array.isArray(articlesResponse) 
+          ? articlesResponse 
+          : (articlesResponse.data || []);
 
+        setArticles(articlesData);
+      } catch (err) {
+        console.error('Error fetching articles:', err);
+        setError('Failed to load articles');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
+  if (loading) {
     return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 mx-auto mb-4"></div>
+            <p className="text-lg text-slate-600 dark:text-gray-300">Loading articles...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 py-16 lg:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-slate-900 dark:text-white">
+                SyFr Electronics{" "}
+                <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
+                  Blog
+                </span>
+              </h1>
+              <p className="text-xl text-slate-600 dark:text-gray-300 leading-relaxed">
+                Unable to load articles at this time
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Error Content */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center py-16">
+              <div className="max-w-md mx-auto">
+                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                  Unable to Load Articles
+                </h3>
+                <p className="text-slate-600 dark:text-gray-400 mb-6">
+                  We're experiencing technical difficulties. Please try again later.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Get featured article (first one) and regular articles
+  const featuredArticle = articles[0];
+  const regularArticles = articles.slice(1);
+
+  return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 py-16 lg:py-24">
@@ -280,49 +355,4 @@ export default async function Blog() {
         </section>
       </div>
     );
-  } catch (error) {
-    console.error('Error fetching articles:', error);
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 py-16 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-slate-900 dark:text-white">
-                SyFr Electronics{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
-                  Blog
-                </span>
-              </h1>
-              <p className="text-xl text-slate-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Stay updated with the latest electronics trends, product reviews, tutorials, and industry insights
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* Error Content */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center py-16">
-              <div className="max-w-md mx-auto">
-                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-                  Unable to Load Articles
-                </h3>
-                <p className="text-slate-600 dark:text-gray-400 mb-6">
-                  We're experiencing technical difficulties. Please try again later.
-                </p>
-               
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  }
 }

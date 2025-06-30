@@ -1,11 +1,7 @@
-import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
-import { Link } from '@/i18n/routing';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Virtual Production LED Displays | SyFr Electronics',
-  description: 'Professional-grade LED walls designed specifically for virtual production, XR applications, and film studios with ultra-low latency and perfect color accuracy.',
-};
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function VirtualProductionLEDDisplaysPage() {
   const t = useTranslations('categories.virtualproduction');

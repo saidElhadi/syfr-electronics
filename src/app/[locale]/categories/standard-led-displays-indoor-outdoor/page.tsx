@@ -1,11 +1,7 @@
-import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
-import { Link } from '@/i18n/routing';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Standard LED Displays - Indoor & Outdoor | SyFr Electronics',
-  description: 'High-quality standard LED displays perfect for both indoor and outdoor applications. Superior brightness, durability, and crystal-clear image quality.',
-};
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function StandardLEDDisplaysPage() {
   const t = useTranslations('categories.standard');

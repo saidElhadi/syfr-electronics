@@ -1,18 +1,97 @@
+'use client';
+
 import { getArticleBySlug } from "@/lib/api";
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    try {
-        const { slug } = await params;
-        const industryData = await getArticleBySlug(slug);
-        const industry = Array.isArray(industryData.data)
-            ? industryData.data[0]
-            : industryData.data;
+interface IndustryProps {
+  params: Promise<{ slug: string }>;
+}
 
-        console.log(industryData);
+const page = ({ params }: IndustryProps) => {
+    const [industry, setIndustry] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
 
+    useEffect(() => {
+        const fetchIndustry = async () => {
+            try {
+                setLoading(true);
+                setError(null);
+                
+                const { slug } = await params;
+                const industryData = await getArticleBySlug(slug);
+                const industryInfo = Array.isArray(industryData.data)
+                    ? industryData.data[0]
+                    : industryData.data;
+
+                if (!industryInfo) {
+                    setError('Industry information not found');
+                    return;
+                }
+
+                console.log(industryData);
+                setIndustry(industryInfo);
+            } catch (err) {
+                console.error('Error fetching industry:', err);
+                setError('Failed to load industry information');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchIndustry();
+    }, [params]);
+
+    if (loading) {
         return (
+            <div className="min-h-screen bg-white dark:bg-slate-900">
+                <div className="flex items-center justify-center min-h-screen">
+                    <div className="text-center">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 mx-auto mb-4"></div>
+                        <p className="text-lg text-slate-600 dark:text-gray-300">Loading industry information...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (error || !industry) {
+        return (
+            <div className="min-h-screen bg-white dark:bg-slate-900">
+                <div className="flex items-center justify-center min-h-screen">
+                    <div className="text-center">
+                        <div className="text-6xl mb-4">😕</div>
+                        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                            {error || 'Industry Information Not Found'}
+                        </h1>
+                        <p className="text-slate-600 dark:text-gray-300 mb-6">
+                            The industry information you're looking for doesn't exist or couldn't be loaded.
+                        </p>
+                        <div className="flex justify-center gap-4">
+                            <button 
+                                onClick={() => router.back()}
+                                className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white font-semibold rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-all duration-300"
+                            >
+                                Go Back
+                            </button>
+                            <Link 
+                                href="/industries"
+                                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+                            >
+                                Browse Industries
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    return (
             <div className="min-h-screen bg-white dark:bg-slate-900">
                 {/* Hero Banner with Featured Image */}
                 <section className="relative h-[30vh] min-h-[300px] overflow-hidden">
@@ -240,35 +319,6 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 </section>
             </div>
         );
-
-    } catch (error) {
-        console.log("Error fetching industry:", error);
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
-                <div className="text-center max-w-md mx-auto p-8">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Industry Not Found</h1>
-                    <p className="text-slate-600 dark:text-gray-300 mb-6">
-                        The industry information you're looking for could not be loaded.
-                    </p>
-                    <Link
-                        href="/industries"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-                    >
-                        View All Industries
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </Link>
-                </div>
-            </div>
-        );
-    }
-
 }
 
 export default page;
