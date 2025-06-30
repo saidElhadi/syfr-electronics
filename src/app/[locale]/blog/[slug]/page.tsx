@@ -1,19 +1,98 @@
+'use client';
+
 import { getArticleBySlug } from '@/lib/api';
-import { notFound } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Link } from '@/i18n/routing'
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  try {
-    const { slug } = await params;
-    const articleResponse = await getArticleBySlug(slug);
-    console.log(articleResponse);
+interface BlogPostProps {
+  params: Promise<{ slug: string }>;
+}
 
-    const article = Array.isArray(articleResponse.data) 
-      ? articleResponse.data[0] 
-      : articleResponse.data;
+export default function BlogPost({ params }: BlogPostProps) {
+  const [article, setArticle] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const { slug } = await params;
+        const articleResponse = await getArticleBySlug(slug);
+        console.log(articleResponse);
+
+        const articleData = Array.isArray(articleResponse.data) 
+          ? articleResponse.data[0] 
+          : articleResponse.data;
+
+        if (!articleData) {
+          setError('Article not found');
+          return;
+        }
+
+        setArticle(articleData);
+      } catch (err) {
+        console.error('Error fetching article:', err);
+        setError('Failed to load article');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticle();
+  }, [params]);
+
+  if (loading) {
     return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 mx-auto mb-4"></div>
+            <p className="text-lg text-slate-600 dark:text-gray-300">Loading article...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !article) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="text-6xl mb-4">😕</div>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              {error || 'Article Not Found'}
+            </h1>
+            <p className="text-slate-600 dark:text-gray-300 mb-6">
+              The article you're looking for doesn't exist or couldn't be loaded.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button 
+                onClick={() => router.back()}
+                className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white font-semibold rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-all duration-300"
+              >
+                Go Back
+              </button>
+              <Link 
+                href="/blog"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+              >
+                Browse Articles
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 py-16 lg:py-24">
@@ -171,7 +250,4 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </section>
       </div>
     );
-  } catch (error) {
-    notFound();
-  }
 }
