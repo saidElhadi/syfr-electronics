@@ -5,18 +5,3 @@ Allow: /
 Sitemap: https://syfrelectronics.com/sitemap.xml
 Sitemap: https://syfrelectronics.com/products-sitemap.xml
 Sitemap: https://syfrelectronics.com/blog-sitemap.xml
-
-# Optimize crawl budget
-Crawl-delay: 1
-
-# Block admin areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /dashboard/
-
-# Allow important pages
-Allow: /products/
-Allow: /blog/
-Allow: /about-us/
-Allow: /contact/
