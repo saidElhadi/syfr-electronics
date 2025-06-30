@@ -4,6 +4,8 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { useDirection } from '@/hooks/useDirection';
 
+import heroImg from '@/assets/hero-img.png'
+
 export default function HeroSection() {
   const t = useTranslations('homepage');
   const { isRTL } = useDirection();
@@ -75,10 +77,10 @@ export default function HeroSection() {
           <div className="order-2 lg:order-1 flex flex-col gap-3 lg:gap-6">
             <div className="relative w-full h-[500px] mx-auto max-w-lg lg:max-w-none">
               <Image
-                src="/assets/curved-led-display-done.png"
+                src={heroImg}
                 alt="Professional LED Display Installation"
                 fill
-                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto border border-slate-200/20 dark:border-white/10"
+                className="object-cover  rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto border border-slate-200/20 dark:border-white/10"
                 priority
                 quality={90}
               />
