@@ -36,11 +36,16 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative">
+      <label htmlFor="language-select" className="sr-only">
+        Select language
+      </label>
       <select
+        id="language-select"
         value={locale}
         onChange={(e) => handleLocaleChange(e.target.value)}
         disabled={isPending}
         className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 text-sm disabled:opacity-50 transition-opacity"
+        aria-label="Select language"
       >
         <option value="en">English</option>
         <option value="fr">Français</option>

@@ -5,6 +5,20 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { getLangDir } from 'rtl-detect';
 import "./globals.css";
 
+// Import local fonts - Arabic subsets for better performance
+import '@fontsource/noto-sans-arabic/arabic-300.css';
+import '@fontsource/noto-sans-arabic/arabic-400.css';
+import '@fontsource/noto-sans-arabic/arabic-500.css';
+import '@fontsource/noto-sans-arabic/arabic-600.css';
+import '@fontsource/noto-sans-arabic/arabic-700.css';
+import '@fontsource/noto-sans-arabic/arabic-800.css';
+import '@fontsource/cairo/300.css';
+import '@fontsource/cairo/400.css';
+import '@fontsource/cairo/500.css';
+import '@fontsource/cairo/600.css';
+import '@fontsource/cairo/700.css';
+import '@fontsource/cairo/800.css';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,12 +45,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={direction}>
-      <head>
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" 
-          rel="stylesheet" 
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${direction === 'rtl' ? 'font-arabic' : ''}`}
       >
