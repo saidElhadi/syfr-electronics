@@ -15,9 +15,17 @@ export default {
       fontFamily: {
         'arabic': ['Noto Sans Arabic', 'Cairo', 'Arial', 'sans-serif'],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+          },
+        },
+      },
     },
   },
   plugins: [
     require('tailwindcss-rtl'),
+    require('@tailwindcss/typography'),
   ],
 } satisfies Config;
