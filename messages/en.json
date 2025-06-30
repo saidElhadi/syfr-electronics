@@ -181,22 +181,22 @@
       "viewAllProducts": "Browse All Products"
     },
     "featuredProjects": {
-      "title": "Featured Projects & Case Studies",
-      "subtitle": "Discover how our LED display solutions transform spaces and create exceptional experiences",
-      "stadium": {
-        "title": "2000m² Stadium Installation",
-        "description": "Giant P6 outdoor LED display for a major stadium, weather-resistant with optimized brightness for television broadcasting.",
-        "cta": "Read Study"
+      "title": "Our Finished Projects",
+      "subtitle": "Discover our completed LED display installations across various industries and environments",
+      "tvProduction": {
+        "title": "TV Show Recording Set",
+        "description": "Professional LED display installation for television production studio with high-quality indoor LED panels for broadcast environments.",
+        "cta": "View Project"
       },
-      "retail": {
-        "title": "Retail Chain 50+ Stores",
-        "description": "Deployment of transparent LED displays in 50+ store windows, increasing customer engagement by 40%.",
-        "cta": "Read Study"
+      "mallInstallations": {
+        "title": "Multiple Mall Installations",
+        "description": "LED display solutions deployed across numerous shopping centers, enhancing customer experience with vibrant digital signage and advertising displays.",
+        "cta": "View Project"
       },
-      "virtualProduction": {
-        "title": "360° Virtual Production Studio",
-        "description": "360° immersive LED wall for virtual production studio with cinema color accuracy and perfect synchronization.",
-        "cta": "Read Study"
+      "landscaping": {
+        "title": "LED Landscaping Projects",
+        "description": "Indoor and outdoor LED installations for landscaping applications, creating stunning visual environments and architectural lighting solutions.",
+        "cta": "View Project"
       },
       "viewAllProjects": "View All Projects"
     },

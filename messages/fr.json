@@ -181,22 +181,22 @@
       "viewAllProducts": "Parcourir Tous les Produits"
     },
     "featuredProjects": {
-      "title": "Projets Phares & Études de Cas",
-      "subtitle": "Découvrez comment nos solutions d'affichage LED transforment les espaces et créent des expériences exceptionnelles",
-      "stadium": {
-        "title": "Installation Stade de 2000m²",
-        "description": "Écran LED extérieur géant P6 pour un stade majeur, résistant aux intempéries avec luminosité optimisée pour la diffusion télévisée.",
-        "cta": "Lire l'Étude"
+      "title": "Nos Projets Terminés",
+      "subtitle": "Découvrez nos installations d'écrans LED complétées dans diverses industries et environnements",
+      "tvProduction": {
+        "title": "Plateau d'Enregistrement TV",
+        "description": "Installation professionnelle d'écran LED pour studio de production télévisuelle avec panneaux LED intérieurs haute qualité pour environnements de diffusion.",
+        "cta": "Voir le Projet"
       },
-      "retail": {
-        "title": "Réseau Commercial 50+ Magasins",
-        "description": "Déploiement d'écrans LED transparents dans les vitrines de 50+ magasins, augmentant l'engagement client de 40%.",
-        "cta": "Lire l'Étude"
+      "mallInstallations": {
+        "title": "Installations Multiples dans les Centres Commerciaux",
+        "description": "Solutions d'affichage LED déployées dans de nombreux centres commerciaux, améliorant l'expérience client avec des enseignes numériques et écrans publicitaires vibrants.",
+        "cta": "Voir le Projet"
       },
-      "virtualProduction": {
-        "title": "Studio Production Virtuelle 360°",
-        "description": "Mur LED immersif 360° pour studio de production virtuelle avec précision couleur cinéma et synchronisation parfaite.",
-        "cta": "Lire l'Étude"
+      "landscaping": {
+        "title": "Projets d'Aménagement Paysager LED",
+        "description": "Installations LED intérieures et extérieures pour applications d'aménagement paysager, créant des environnements visuels époustouflants et solutions d'éclairage architectural.",
+        "cta": "Voir le Projet"
       },
       "viewAllProjects": "Voir Tous les Projets"
     },
