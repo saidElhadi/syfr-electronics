@@ -1,36 +1,22 @@
 User-agent: *
 Allow: /
 
-# Disallow admin and API areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /dashboard/
-Disallow: /.well-known/
-Disallow: /private/
-
-
-
-# Allow important pages and directories
-
-Allow: /
-Allow: /en/
-Allow: /fr/
-Allow: /ar/
-Allow: /products/
-Allow: /categories/
-Allow: /parts/
-Allow: /blog/
-Allow: /about-us/
-Allow: /contact/
-Allow: /industries/
-Allow: /featured-projects/
-
 # Sitemaps
-Sitemap: https://syfrelectronics.com/sitemap-index.xml
 Sitemap: https://syfrelectronics.com/sitemap.xml
 Sitemap: https://syfrelectronics.com/products-sitemap.xml
 Sitemap: https://syfrelectronics.com/blog-sitemap.xml
 
-# Host directive for preferred domain
-Host: https://syfrelectronics.com
+# Optimize crawl budget
+Crawl-delay: 1
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /dashboard/
+
+# Allow important pages
+Allow: /products/
+Allow: /blog/
+Allow: /about-us/
+Allow: /contact/
