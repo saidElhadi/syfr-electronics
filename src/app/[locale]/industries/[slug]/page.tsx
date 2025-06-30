@@ -2,7 +2,7 @@ import { getArticleBySlug } from "@/lib/api";
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 
-const page = async ({ params }: { params: { slug: string } }) => {
+const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     try {
         const { slug } = await params;
         const industryData = await getArticleBySlug(slug);
@@ -11,7 +11,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
             : industryData.data;
 
         console.log(industryData);
-        
+
         return (
             <div className="min-h-screen bg-white dark:bg-slate-900">
                 {/* Hero Banner with Featured Image */}
@@ -28,10 +28,10 @@ const page = async ({ params }: { params: { slug: string } }) => {
                     ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900" />
                     )}
-                    
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/50" />
-                    
+
                     {/* Content */}
                     <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
                         <div className="max-w-4xl">
@@ -76,7 +76,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
 
                             {/* CTA Button */}
                             <div className="flex flex-wrap gap-4">
-                                <Link 
+                                <Link
                                     href="/contact"
                                     className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                                 >
@@ -85,7 +85,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </Link>
-                                <Link 
+                                <Link
                                     href="/products"
                                     className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg transition-all duration-300 border border-white/20"
                                 >
@@ -172,7 +172,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                                                 <p className="text-blue-100 mb-4 text-sm">
                                                     Get expert consultation and custom LED display solutions tailored to your industry needs.
                                                 </p>
-                                                <Link 
+                                                <Link
                                                     href="/contact"
                                                     className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors text-sm w-full justify-center"
                                                 >
@@ -211,7 +211,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                                         Our team of experts can design and implement LED display solutions specifically tailored to your industry requirements and business objectives.
                                     </p>
                                     <div className="flex flex-wrap justify-center gap-4">
-                                        <Link 
+                                        <Link
                                             href="/contact"
                                             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                                         >
@@ -220,13 +220,13 @@ const page = async ({ params }: { params: { slug: string } }) => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
                                         </Link>
-                                        <Link 
+                                        <Link
                                             href="/featured-projects"
                                             className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold rounded-lg transition-all duration-300 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600"
                                         >
                                             View Case Studies
                                         </Link>
-                                        <Link 
+                                        <Link
                                             href="/industries"
                                             className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold rounded-lg transition-all duration-300 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600"
                                         >
@@ -255,7 +255,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                     <p className="text-slate-600 dark:text-gray-300 mb-6">
                         The industry information you're looking for could not be loaded.
                     </p>
-                    <Link 
+                    <Link
                         href="/industries"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
                     >
