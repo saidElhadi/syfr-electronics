@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing'
 import Image from 'next/image';
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   try {
     const { slug } = await params;
     const articleResponse = await getArticleBySlug(slug);
