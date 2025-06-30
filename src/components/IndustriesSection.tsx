@@ -9,27 +9,48 @@ import corporateImg from "@/assets/corp-event.webp"
 import entertainmentImg from "@/assets/entertainment.webp"
 import educationImg from "@/assets/education.jpg"
 
+import { Link } from '@/i18n/routing';
+
 interface IndustryCardProps {
   name: string;
   image: StaticImageData;
   className?: string;
+  url?: string;
 }
 
-function IndustryCard({ name, image, className = "" }: IndustryCardProps) {
+function IndustryCard({ name, image, className = "", url }: IndustryCardProps) {
   return (
-    <div className={`group ${className}`}>
-      <div className="relative h-full bg-white dark:bg-gray-700 overflow-hidden transition-all duration-300 transform group-hover:scale-105 group-hover:z-50">
-        <Image 
-          src={image} 
-          alt={name}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-2xl">
-          <h3 className="font-semibold text-white text-lg p-4">{name}</h3>
+    <>
+      {url ? (
+        <Link href={`/industries/${url}`} className={`group ${className}`}>
+          <div className="relative h-full bg-white dark:bg-gray-700 overflow-hidden transition-all duration-300 transform group-hover:scale-105 group-hover:z-50">
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-2xl">
+              <h3 className="font-semibold text-white text-lg p-4">{name}</h3>
+            </div>
+          </div>
+        </Link>
+      ) : (
+        <div className={`group ${className}`}>
+          <div className="relative h-full bg-white dark:bg-gray-700 overflow-hidden transition-all duration-300 transform group-hover:scale-105 group-hover:z-50">
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-2xl">
+              <h3 className="font-semibold text-white text-lg p-4">{name}</h3>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
@@ -59,42 +80,48 @@ export default function IndustriesSection() {
 
         <div className="grid grid-cols-3 gap-0 mb-16 min-h-[1000px]">
           {/* Row 1: [1][1][2] */}
-          <IndustryCard 
+          <IndustryCard
             name={industries[0].name}
             image={industries[0].image}
             className="col-span-2"
+            url='led-displays-in-retail'
           />
 
-          <IndustryCard 
+          <IndustryCard
             name={industries[1].name}
             image={industries[1].image}
             className="col-span-1 row-span-2"
+            url='sports'
           />
 
           {/* Row 2: [3][4][2] - continuing transportation */}
-          <IndustryCard 
+          <IndustryCard
             name={industries[2].name}
             image={industries[2].image}
             className="col-span-1"
+            url='led-displays-transportation-industry'
           />
-          
-          <IndustryCard 
+
+          <IndustryCard
             name={industries[3].name}
             image={industries[3].image}
             className="col-span-1"
+            url='led-displays-in-entertainment'
           />
-          
-          <IndustryCard 
+
+          <IndustryCard
             name={industries[4].name}
             image={industries[4].image}
             className="col-span-1"
+            url='led-displays-in-education'
           />
 
           {/* Row 3: [5][6][6] */}
-          <IndustryCard 
+          <IndustryCard
             name={industries[5].name}
             image={industries[5].image}
             className="col-span-2"
+            url='led-displays-corporate-events'
           />
 
         </div>

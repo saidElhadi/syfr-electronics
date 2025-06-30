@@ -22,8 +22,8 @@ export default function Home() {
       <HeroSection />
       <WhatWeDoSection />
       <ProductCategoriesSection />
-      <FeaturedProjectsSection />
       <AdvantagesSection />
+      <FeaturedProjectsSection />
       <LEDPartsSection />
       <IndustriesSection />
       <WhyChooseUsSection />

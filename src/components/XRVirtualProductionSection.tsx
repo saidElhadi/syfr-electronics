@@ -46,11 +46,11 @@ export default function XRVirtualProductionSection() {
 
                         {/* Description and CTAs */}
                         <div className={`flex flex-col sm:flex-row w-full items-center space-y-6 mt-8 lg:mt-0 relative z-10 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-                            <p className={`sm:w-3/4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed ${isRTL ? 'text-center sm:text-right' : 'text-center sm:text-left'}`}>
+                            <p className={`sm:w-3/5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed ${isRTL ? 'text-center sm:text-right' : 'text-center sm:text-left'}`}>
                                 {t('productCategories.xrVp.description')}
                             </p>
 
-                            <div className="sm:w-1/4 flex flex-col gap-4">
+                            <div className="sm:w-2/5 flex flex-col gap-4">
                                 <Link 
                                     href="/products?category=xr-virtual-production"
                                     className={`inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold px-8 py-4 rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 ${isRTL ? 'flex-row-reverse' : ''}`}

@@ -10,14 +10,15 @@ export const metadata: Metadata = {
 
 // Featured article card component
 function FeaturedArticleCard({ article }: { article: any }) {
+  console.log("debug", article)
   return (
     <article className="relative group overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-800 shadow-xl transition-all duration-300 hover:shadow-2xl">
       <div className="grid lg:grid-cols-2 gap-0 min-h-[400px]">
         {/* Image Section */}
         <div className="relative overflow-hidden">
-          {article.featuredImage ? (
+          {article.featured_image_url ? (
             <Image
-              src={article.featuredImage}
+              src={article.featured_image_url}
               alt={article.title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"

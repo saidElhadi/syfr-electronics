@@ -69,7 +69,7 @@ export default function AllInOnePostersSection() {
               hideBanner
             /> */}
             <div className="relative lg:w-1/3 flex flex-row items-center">
-              <Image src={allInOneImage} alt="All-in-One LED Display" className="w-full h-auto aspect-[9/16]" />
+              <Image src={allInOneImage} alt="All-in-One LED Display" className="w-full h-auto aspect-auto" />
               {/* <Image src={allInOneImage} alt="All-in-One LED Display" className="w-full h-auto " /> */}
             </div>
             {/* Temporary placeholder until you add your image */}
