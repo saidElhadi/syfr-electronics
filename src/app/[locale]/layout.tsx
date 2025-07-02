@@ -1,24 +1,48 @@
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, getTranslations} from 'next-intl/server';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
+import { notFound, redirect } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import type { Metadata } from "next";
- 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
+import "./globals.css";
+// Import local fonts - Arabic subsets for better performance
+import '@fontsource/noto-sans-arabic/arabic-300.css';
+import '@fontsource/noto-sans-arabic/arabic-400.css';
+import '@fontsource/noto-sans-arabic/arabic-500.css';
+import '@fontsource/noto-sans-arabic/arabic-600.css';
+import '@fontsource/noto-sans-arabic/arabic-700.css';
+import '@fontsource/noto-sans-arabic/arabic-800.css';
+import '@fontsource/cairo/300.css';
+import '@fontsource/cairo/400.css';
+import '@fontsource/cairo/500.css';
+import '@fontsource/cairo/600.css';
+import '@fontsource/cairo/700.css';
+import '@fontsource/cairo/800.css';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { getLangDir } from 'rtl-detect';
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 type Props = {
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({params}: Props): Promise<Metadata> {
-  const {locale} = await params;
-  const t = await getTranslations({locale, namespace: 'metadata'});
-  
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+
   return {
     title: t('title'),
     description: t('description'),
@@ -81,30 +105,39 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     },
   };
 }
- 
-export default async function LocaleLayout({
+
+export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
-  
+  const { locale } = await params;
+  const direction = getLangDir(locale);
+
   if (!routing.locales.includes(locale as any)) {
-    notFound();
+    // redirect('/en')
+    notFound()
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages({locale});
-  
+  const messages = await getMessages({ locale });
+
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <StructuredData />
-      <Navigation />
-      <main>{children}</main>
-      <Footer />
-    </NextIntlClientProvider>
+    <html lang={locale} dir={direction}>
+      {/* <head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="TKDkWyy5lKMFYeRkTzZXAQ" async></script>
+        </head> */}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${direction === 'rtl' ? 'font-arabic' : ''}`}
+      >
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <StructuredData />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

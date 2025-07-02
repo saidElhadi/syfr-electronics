@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Core pages with high priority
   const corePages = [
     {
-      path: '',
+      path: '/',
       changeFrequency: 'daily' as const,
       priority: 1.0
     },
