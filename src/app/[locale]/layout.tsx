@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import Script from 'next/script';
 import type { Metadata } from "next";
 import "./globals.css";
 // Import local fonts - Arabic subsets for better performance
@@ -22,6 +23,7 @@ import '@fontsource/cairo/700.css';
 import '@fontsource/cairo/800.css';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { getLangDir } from 'rtl-detect';
+import { Analytics } from '@vercel/analytics/react';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -125,12 +127,16 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={direction}>
-      {/* <head>
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="TKDkWyy5lKMFYeRkTzZXAQ" async></script>
-        </head> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${direction === 'rtl' ? 'font-arabic' : ''}`}
       >
+        {/* Analytics Script - Loads after the page becomes interactive */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="TKDkWyy5lKMFYeRkTzZXAQ"
+          strategy="afterInteractive"
+        />
+
         <NextIntlClientProvider messages={messages} locale={locale}>
           <StructuredData />
           <Navigation />
@@ -138,6 +144,7 @@ export default async function RootLayout({
           <Footer />
         </NextIntlClientProvider>
       </body>
+      <Analytics />
     </html>
   );
 }

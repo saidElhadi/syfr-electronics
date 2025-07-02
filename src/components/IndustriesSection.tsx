@@ -15,10 +15,11 @@ interface IndustryCardProps {
   name: string;
   image: StaticImageData;
   className?: string;
+  altImg: string;
   url?: string;
 }
 
-function IndustryCard({ name, image, className = "", url }: IndustryCardProps) {
+function IndustryCard({ name, image, className = "", url, altImg }: IndustryCardProps) {
   return (
     <>
       {url ? (
@@ -26,7 +27,7 @@ function IndustryCard({ name, image, className = "", url }: IndustryCardProps) {
           <div className="relative h-full bg-white dark:bg-gray-700 overflow-hidden transition-all duration-300 transform group-hover:scale-105 group-hover:z-50">
             <Image
               src={image}
-              alt={name}
+              alt={altImg}
               fill
               className="object-cover"
             />
@@ -40,7 +41,7 @@ function IndustryCard({ name, image, className = "", url }: IndustryCardProps) {
           <div className="relative h-full bg-white dark:bg-gray-700 overflow-hidden transition-all duration-300 transform group-hover:scale-105 group-hover:z-50">
             <Image
               src={image}
-              alt={name}
+              alt={altImg}
               fill
               className="object-cover"
             />
@@ -84,6 +85,7 @@ export default function IndustriesSection() {
             name={industries[0].name}
             image={industries[0].image}
             className="col-span-2"
+            altImg='Led displays used in a storefront'
             url='led-displays-in-retail'
           />
 
@@ -91,6 +93,7 @@ export default function IndustriesSection() {
             name={industries[1].name}
             image={industries[1].image}
             className="col-span-1 row-span-2"
+            altImg='Led displays used in a stadium'
             url='sports'
           />
 
@@ -100,6 +103,8 @@ export default function IndustriesSection() {
             image={industries[2].image}
             className="col-span-1"
             url='led-displays-transportation-industry'
+            altImg='Led displays used in an airport or train station'
+
           />
 
           <IndustryCard
@@ -107,6 +112,8 @@ export default function IndustriesSection() {
             image={industries[3].image}
             className="col-span-1"
             url='led-displays-in-entertainment'
+            altImg='Led displays used in a music festival'
+
           />
 
           <IndustryCard
@@ -114,6 +121,8 @@ export default function IndustriesSection() {
             image={industries[4].image}
             className="col-span-1"
             url='led-displays-in-education'
+            altImg='Led displays used in a class room'
+
           />
 
           {/* Row 3: [5][6][6] */}
@@ -122,6 +131,7 @@ export default function IndustriesSection() {
             image={industries[5].image}
             className="col-span-2"
             url='led-displays-corporate-events'
+            altImg='Led displays used in a company event'
           />
 
         </div>

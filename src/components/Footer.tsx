@@ -52,7 +52,7 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="mt-6 text-gray-500 text-sm">
+            <ul className="text-gray-300 hover:text-white">
               This website is availble in the following languages
               <li>
                 <Link href={'/'} locale='en' className=''>
@@ -69,7 +69,7 @@ export default function Footer() {
                   Arabic
                 </Link>
               </li>
-            </div>
+            </ul>
           </div>          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
