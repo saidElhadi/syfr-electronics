@@ -13,11 +13,11 @@ export default function FlexibleDisplaysSection() {
         <section className="py-16 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20">
             <div className="container mx-auto px-4">
                 <div className="max-w-7xl mx-auto">
-                    <div className={`flex flex-col gap-12 items-center ${isRTL ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                    <div className={`flex flex-col my-auto aspect-[3/2] gap-12 items-center ${isRTL ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
 
                         {/* Visual Side */}
-                        <div className="relative lg:w-1/3  flex flex-row items-center">
-                            <Image src={flexibleDisplayImageWhite} alt="Flexible LED Display" className="w-full h-auto aspect-auto" />
+                        <div className="relative lg:w-1/3 h-full aspect-auto flex flex-row items-center">
+                            <Image src={flexibleDisplayImageWhite} alt="Flexible LED Display" className="w-full h-auto aspect-auto" fill/>
                         </div>
 
                         {/* Content Side */}
