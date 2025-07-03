@@ -2,6 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+
+// Import all-in-one LED display images
+import allInOneLedImage from '@/assets/allinone-led.png';
+import layerCopyImage from '@/assets/Layer 0 copy.png';
 
 export default function AllInOneLEDDisplaysPage() {
   const t = useTranslations('categories.allinone');
@@ -12,14 +17,14 @@ export default function AllInOneLEDDisplaysPage() {
       id: '5',
       name: 'Interactive Touch Kiosk',
       description: 'Complete interactive kiosk solution with touch capability and integrated computing.',
-      image: '/assets/allinone-led.png',
+      image: allInOneLedImage,
       features: ['Multi-touch Display', 'Built-in PC', 'Android OS', 'Custom Software']
     },
     {
       id: '6',
       name: 'Standalone Digital Poster',
       description: 'Self-contained digital signage solution with media player and remote management.',
-      image: '/assets/Layer 0 copy.png',
+      image: layerCopyImage,
       features: ['Built-in Media Player', 'Remote Control', 'Auto-scheduling', 'Cloud Management']
     }
   ];
@@ -93,11 +98,15 @@ export default function AllInOneLEDDisplaysPage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="/assets/allinone-led.png"
+            <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+              <Image
+                src={allInOneLedImage}
                 alt={t('pageTitle')}
+                fill
                 className="w-full h-full object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={70}
               />
             </div>
           </div>
@@ -123,11 +132,13 @@ export default function AllInOneLEDDisplaysPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow">
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700">
-                  <img
+                <div className="relative aspect-video bg-gray-200 dark:bg-gray-700">
+                  <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - ${product.description}`}
+                    fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">

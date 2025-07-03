@@ -2,6 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+
+// Import flexible LED display images
+import curvedDisplayImage from '@/assets/curved-led-display.jpg';
+import curvedDisplayDoneImage from '@/assets/curved-led-display-done.png';
+import flexibleDisplayImage from '@/assets/flexible-display.jpg';
 
 export default function FlexibleLEDDisplaysPage() {
   const t = useTranslations('categories.flexible');
@@ -12,15 +18,22 @@ export default function FlexibleLEDDisplaysPage() {
       id: '3',
       name: 'Curved LED Display Panel',
       description: 'Seamlessly curved LED panels that create immersive viewing experiences.',
-      image: '/assets/curved-led-display.jpg',
+      image: curvedDisplayImage,
       features: ['Bendable Design', 'Seamless Connection', 'P3.91 Pixel Pitch', 'Lightweight']
     },
     {
       id: '4',
       name: 'Flexible LED Strip Display',
       description: 'Ultra-flexible LED strips perfect for creative and architectural applications.',
-      image: '/assets/curved-led-display-done.png',
+      image: curvedDisplayDoneImage,
       features: ['360° Bendable', 'Cuttable Lengths', 'IP67 Rating', 'Easy Installation']
+    },
+    {
+      id: '5',
+      name: 'Flexible Display Module',
+      description: 'Advanced flexible display modules for innovative design solutions.',
+      image: flexibleDisplayImage,
+      features: ['Ultra-thin Design', 'High Flexibility', 'Easy Integration', 'Custom Shapes']
     }
   ];
 
@@ -79,11 +92,14 @@ export default function FlexibleLEDDisplaysPage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="/assets/curved-led-display.jpg"
+            <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+              <Image
+                src={curvedDisplayImage}
                 alt={t('pageTitle')}
+                fill
                 className="w-full h-full object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
@@ -108,11 +124,13 @@ export default function FlexibleLEDDisplaysPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow">
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700">
-                  <img
+                <div className="relative aspect-video bg-gray-200 dark:bg-gray-700">
+                  <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - ${product.description}`}
+                    fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { useDirection } from '@/hooks/useDirection';
 
+// Import LED display category images
 import allinonImg from "@/assets/allinone-led.png";
 import flexibleImg from "@/assets/curved-led-display.jpg";
 import standardImg from "@/assets/entertainment.webp";
@@ -81,14 +82,14 @@ export default function CategoriesPage() {
                             href={`/categories/${category.slug}`}
                             className="group bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow duration-300"
                         >
-                            <div className="aspect-video bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 overflow-hidden">
                                 <Image
                                     src={category.image}
-                                    alt={category.title}
-                                    width={800}
-                                    height={450}
+                                    alt={`${category.title} - ${category.description}`}
+                                    fill
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     priority={true}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                             </div>
                             <div className="p-6">

@@ -2,6 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+
+// Import virtual production LED display images
+import virtualSetImage from '@/assets/virtualset.jpg';
+import tvStudioImage from '@/assets/tv-studio.jpg';
 
 export default function VirtualProductionLEDDisplaysPage() {
   const t = useTranslations('categories.virtualproduction');
@@ -12,14 +17,14 @@ export default function VirtualProductionLEDDisplaysPage() {
       id: '7',
       name: 'VP Series LED Wall',
       description: 'Professional virtual production LED wall with ultra-low latency and perfect color reproduction.',
-      image: '/assets/virtualset.jpg',
+      image: virtualSetImage,
       features: ['Ultra-low Latency', 'High Refresh Rate', 'Color Accurate', 'Genlock Support']
     },
     {
       id: '8',
       name: 'XR Studio LED Panel',
       description: 'Specialized LED panels for extended reality applications and immersive environments.',
-      image: '/assets/virtualset.jpg',
+      image: tvStudioImage,
       features: ['XR Optimized', 'Camera Tracking', 'Real-time Rendering', 'Seamless Tiles']
     }
   ];
@@ -102,11 +107,14 @@ export default function VirtualProductionLEDDisplaysPage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="/assets/virtualset.jpg"
+            <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+              <Image
+                src={virtualSetImage}
                 alt={t('pageTitle')}
+                fill
                 className="w-full h-full object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
@@ -145,11 +153,13 @@ export default function VirtualProductionLEDDisplaysPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow">
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700">
-                  <img
+                <div className="relative aspect-video bg-gray-200 dark:bg-gray-700">
+                  <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - ${product.description}`}
+                    fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">

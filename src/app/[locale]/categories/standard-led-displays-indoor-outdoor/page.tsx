@@ -2,6 +2,13 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+
+// Import LED display images
+import ledModuleImage from '@/assets/led-module.jpg';
+import ledPanelImage from '@/assets/led-pannel.jpg';
+import outdoorIndoorLedImage from '@/assets/outdoor-indoor-led.png';
+import standardDisplayHeroImage from '@/assets/led-pannel.png';
 
 export default function StandardLEDDisplaysPage() {
   const t = useTranslations('categories.standard');
@@ -12,15 +19,22 @@ export default function StandardLEDDisplaysPage() {
       id: '1',
       name: 'P2.5 Indoor LED Panel',
       description: 'High-resolution indoor LED panel with 2.5mm pixel pitch for stunning clarity.',
-      image: '/assets/led-pannel.png',
+      image: ledModuleImage,
       features: ['2.5mm Pixel Pitch', '1920Hz Refresh Rate', 'Indoor Use', '500x500mm Module']
     },
     {
       id: '2',
       name: 'P4 Outdoor LED Display',
       description: 'Weather-resistant outdoor LED display with high brightness for daylight visibility.',
-      image: '/assets/outdoor-indoor-led.png',
+      image: outdoorIndoorLedImage,
       features: ['4mm Pixel Pitch', 'IP65 Waterproof', 'Outdoor Use', '6000+ Nits Brightness']
+    },
+    {
+      id: '3',
+      name: 'Standard LED Panel',
+      description: 'Versatile LED panel suitable for various indoor and outdoor applications.',
+      image: ledPanelImage,
+      features: ['Flexible Installation', 'High Brightness', 'Long Lifespan', 'Energy Efficient']
     }
   ];
 
@@ -70,11 +84,14 @@ export default function StandardLEDDisplaysPage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="/assets/led-pannel.png"
+            <div className="relative aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+              <Image
+                src={standardDisplayHeroImage}
                 alt={t('pageTitle')}
+                fill
                 className="w-full h-full object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
@@ -86,11 +103,13 @@ export default function StandardLEDDisplaysPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-gray-900/20 overflow-hidden hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-gray-900/30 transition-shadow">
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700">
-                  <img
+                <div className="relative aspect-video bg-gray-200 dark:bg-gray-700">
+                  <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - ${product.description}`}
+                    fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">
