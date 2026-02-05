@@ -71,7 +71,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={'/'} locale='ar' className=''>
+                <Link href={'/'} locale='ar'>
                   Arabic
                 </Link>
               </li>
