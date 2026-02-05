@@ -130,17 +130,24 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${direction === 'rtl' ? 'font-arabic' : ''}`}
       >
-        {/* Analytics Script - Loads after the page becomes interactive */}
+        {/* Analytics Script - Loads lazily after page load */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="TKDkWyy5lKMFYeRkTzZXAQ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <NextIntlClientProvider messages={messages} locale={locale}>
+          {/* Skip to main content link for accessibility */}
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded"
+          >
+            Skip to main content
+          </a>
           <StructuredData />
           <Navigation />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -281,7 +281,6 @@ export async function getArticle(id: string, params: { include?: string } = {}):
 }
 
 export async function getArticleBySlug(slug: string, params: { include?: string } = {}): Promise<ApiResponse<Article>> {
-  console.log('test')
   const query = new URLSearchParams();
   if (params.include) {
     query.append('include', params.include);

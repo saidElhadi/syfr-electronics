@@ -1,6 +1,21 @@
-
+# SyFr Electronics - Robots.txt
+# Allow all crawlers to index all content
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Disallow crawling of API routes and admin pages
+Disallow: /api/
+
+# Allow search engines to access CSS, JS, and images
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
 
 # Sitemap location
 Sitemap: https://www.syfrelectronics.com/sitemap.xml

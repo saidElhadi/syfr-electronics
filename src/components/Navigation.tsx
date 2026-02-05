@@ -90,8 +90,16 @@ export default function Navigation() {
                 onMouseEnter={() => setIsCategoriesOpen(true)}
                 onMouseLeave={() => setIsCategoriesOpen(false)}
               >
-                <Link
-                  href="/categories"
+                <button
+                  onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setIsCategoriesOpen(!isCategoriesOpen);
+                    }
+                  }}
+                  aria-expanded={isCategoriesOpen}
+                  aria-haspopup="true"
                   className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                 >
                   {t('categories')}
@@ -100,19 +108,24 @@ export default function Navigation() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </Link>
+                </button>
 
                 {/* Dropdown Menu */}
-                <div className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200 ${isCategoriesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
+                <div 
+                  role="menu"
+                  aria-label={t('categories')}
+                  className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200 ${isCategoriesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                   }`}>
                   <div className="py-2">
                     {categories.map((category) => (
                       <Link
                         key={category.slug}
                         href={`/categories/${category.slug}`}
+                        role="menuitem"
                         className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
                         {t(`categoriesDropdown.${category.key}`)}
