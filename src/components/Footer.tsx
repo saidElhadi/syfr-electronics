@@ -22,7 +22,9 @@ export default function Footer() {
             </p>
             <div className={`flex ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
               <a
-                href="#"
+                href={contactInfo.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Follow us on Twitter"
                 title="Follow us on Twitter"
@@ -32,7 +34,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href={contactInfo.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Follow us on Facebook"
                 title="Follow us on Facebook"
@@ -42,7 +46,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href={contactInfo.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Connect with us on LinkedIn"
                 title="Connect with us on LinkedIn"
@@ -65,7 +71,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={'/'} locale='fr' className=''>
+                <Link href={'/'} locale='ar' className=''>
                   Arabic
                 </Link>
               </li>
@@ -147,7 +153,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2025 {t('company')}. {t('allRightsReserved')}</p>
+          <p>&copy; {new Date().getFullYear()} {t('company')}. {t('allRightsReserved')}</p>
         </div>
       </div>
     </footer>
