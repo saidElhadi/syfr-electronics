@@ -69,7 +69,7 @@ export default function FeaturedProjectsSection() {
             <div className="relative h-96 lg:h-[500px] bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 rounded-2xl overflow-hidden mb-6 group">
               {/* Left side image */}
               <div className="relative w-full h-full">
-                <Image src={latestProjectImg} alt='Syfr Finished Projects' fill className="object-cover" />
+                <Image src={latestProjectImg} alt='Antix LED Finished Projects' fill className="object-cover" />
 
               </div>
               <div className={`absolute ${isRTL ? 'top-6 right-6' : 'top-6 left-6'}`}>

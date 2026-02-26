@@ -165,7 +165,7 @@ export const mockParts = [
     updated_at: '2025-06-01T00:00:00Z',
     sku: 'CTRL-001',
     status: 'active',
-    manufacturer: 'SyFr Electronics',
+    manufacturer: 'Antix LED',
     part_number: 'SFR-CTRL-001'
   }
 ];

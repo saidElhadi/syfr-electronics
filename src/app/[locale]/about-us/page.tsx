@@ -12,7 +12,7 @@ export default function AboutUs() {
           <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
             <h2 className={`text-2xl font-semibold mb-4 ${isRTL ? 'text-right' : 'text-left'}`}>Our Story</h2>
             <p className={`text-gray-600 dark:text-gray-300 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
-              SyFr Electronics has been at the forefront of electronic innovation for over a decade. 
+              Antix LED has been at the forefront of electronic innovation for over a decade. 
               We are committed to providing high-quality electronic products and solutions that meet 
               the evolving needs of our customers.
             </p>

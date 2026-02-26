@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.syfrelectronics.com'
+  const baseUrl = 'https://www.antixled.com'
   const locales = ['en', 'fr', 'ar']
   const currentDate = new Date()
   

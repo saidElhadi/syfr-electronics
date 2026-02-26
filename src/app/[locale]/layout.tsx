@@ -49,15 +49,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
-    authors: [{ name: "SyFr Electronics" }],
-    creator: "SyFr Electronics",
-    publisher: "SyFr Electronics",
+    authors: [{ name: "Antix LED" }],
+    creator: "Antix LED",
+    publisher: "Antix LED",
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://syfrelectronics.com'),
+    metadataBase: new URL('https://antixled.com'),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -69,14 +69,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://syfrelectronics.com',
-      siteName: 'SyFr Electronics',
+      url: 'https://antixled.com',
+      siteName: 'Antix LED',
       images: [
         {
           url: '/led-display-hero.jpg',
           width: 1200,
           height: 630,
-          alt: 'Professional LED Display Solutions by SyFr Electronics',
+          alt: 'Professional LED Display Solutions by Antix LED',
         }
       ],
       locale: locale,
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('title'),
       description: t('description'),
       images: ['/led-display-hero.jpg'],
-      creator: '@syfrelectronics',
+      creator: '@antixled',
     },
     robots: {
       index: true,

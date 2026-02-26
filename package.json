@@ -1,5 +1,5 @@
 {
-  "name": "syfr-electronics",
+  "name": "antix-led",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,8 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.16",
     "@vercel/analytics": "^1.5.0",
+    "firebase": "^12.9.0",
+    "firebase-admin": "^13.6.1",
     "lucide-react": "^0.512.0",
     "next": "15.1.0",
     "next-intl": "^4.1.0",

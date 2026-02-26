@@ -3,7 +3,7 @@ export default function HomeRoute() {
     <div className="min-h-screen p-8 sm:p-20">
       <main className="max-w-7xl mx-auto">
         <section className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6">Welcome to SyFr Electronics</h1>
+          <h1 className="text-5xl font-bold mb-6">Welcome to Antix LED</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Your trusted partner for innovative electronic solutions. Discover our comprehensive 
             range of products and services designed to meet all your electronic needs.
@@ -45,7 +45,7 @@ export default function HomeRoute() {
         <section className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-12 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8">
-            Explore our products and discover how SyFr Electronics can power your next project.
+            Explore our products and discover how Antix LED can power your next project.
           </p>
           <div className="space-x-4">
             <button className="bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">

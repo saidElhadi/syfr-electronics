@@ -203,7 +203,7 @@ export default function Blog() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-slate-900 dark:text-white">
-                SyFr Electronics{" "}
+                Antix LED{" "}
                 <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
                   Blog
                 </span>
@@ -272,7 +272,7 @@ export default function Blog() {
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-slate-900 dark:text-white">
-                SyFr Electronics{" "}
+                Antix LED{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
                   Blog
                 </span>

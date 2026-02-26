@@ -1,4 +1,4 @@
-// Centralized contact information for SyFr Electronics
+// Centralized contact information for Antix LED
 export interface ContactInfo {
   company: string;
   phone: string;
@@ -30,10 +30,10 @@ export interface ContactInfo {
 }
 
 export const contactInfo: ContactInfo = {
-  company: "SYFR Electronics",
+  company: "Antix LED",
   phone: "+86-177-2464-9726",
   phoneFormatted: "+86 177 2464 9726",
-  email: "info@syfrelectronics.com",
+  email: "info@antixled.com",
   address: {
     street: "345 Huaqiang North Road, Futian District",
     city: "Shenzhen",
@@ -42,11 +42,11 @@ export const contactInfo: ContactInfo = {
     country: "CN",
     full: "345 Huaqiang North Road, Futian District, Shenzhen, Guangdong 518000"
   },
-  website: "https://syfrelectronics.com",
+  website: "https://antixled.com",
   social: {
-    linkedin: "https://www.linkedin.com/company/syfrelectronics",
-    twitter: "https://twitter.com/syfrelectronics",
-    facebook: "https://www.facebook.com/syfrelectronics"
+    linkedin: "https://www.linkedin.com/company/antixled",
+    twitter: "https://twitter.com/antixled",
+    facebook: "https://www.facebook.com/antixled"
   },
   businessHours: {
     weekdays: "Monday - Friday: 9:00 AM - 6:00 PM",
